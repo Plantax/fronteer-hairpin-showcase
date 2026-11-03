@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fronteer Hairpin – end-winding optimization for hairpin stators</title>
+  <meta name="description" content="Fronteer Hairpin: machine-learning optimization of hairpin winding end windings for electric motor stators. The shortest valid conductor for every basket, verified in CAD.">
+  <meta name="keywords" content="hairpin winding, hairpin stator, end winding, electric motor, stator winding, Wickelkopf, Haarnadelwicklung, Flachdrahtwicklung, Bayesian optimization">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Fronteer Lab">
+  <meta property="og:title" content="Fronteer Hairpin – end-winding optimization for hairpin stators">
+  <meta property="og:description" content="Machine-learning optimization of hairpin winding end windings for electric motor stators. The shortest valid conductor for every basket, verified in CAD.">
+  <meta property="og:url" content="https://fronteerlab.com/">
+  <meta property="og:image" content="https://fronteerlab.com/img/og.jpg">
+  <link rel="canonical" href="https://fronteerlab.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Fronteer Hairpin","applicationCategory":"EngineeringApplication","description":"Machine-learning optimization of hairpin winding end windings for electric motor stators, verified in CAD."}</script>
+  <meta name="theme-color" content="#0e0e10">
+  <link rel="preload" href="assets/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <a class="skip" href="#top" data-i18n="skip">Skip to content</a>
+  <header class="nav" id="nav">
+    <a class="brand" href="#top"><i></i><span translate="no">Fronteer Hairpin</span></a>
+    <nav>
+      <a href="#modules" data-i18n="nav_modules">Modules</a>
+      <a href="#gen" data-i18n="nav_gen">Generation</a>
+      <a href="#mfg" data-i18n="nav_mfg">Manufacturing</a>
+      <a href="mailto:contact@fronteerlab.com" id="navcontact" data-i18n="nav_contact">Contact</a>
+      <select id="lang" aria-label="Language"><option value="en">EN</option><option value="de">DE</option></select>
+      <a class="btn small" href="#modules" data-i18n="nav_demo">Apps</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- 1 · Hero -->
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="eyebrow">Hairpin end windings</p>
+        <h1 data-i18n="h1">The shortest hairpin<br>that meets every requirement.</h1>
+        <p class="lead" data-i18n="lead">Every candidate shape is a real CAD model, measured against clearance, bend radius, build space and assembly order. The optimizer keeps the best one.</p>
+        <div class="hero-mods">
+          <article class="hm">
+            <p class="hm-k" data-i18n="hm1_k">01 · Generation</p>
+            <p class="hm-v"><b id="heroLen" data-count="174.14" data-dec="2">174.14</b><em>mm</em></p>
+            <p class="hm-s" data-i18n="hm1_s">End-winding length · best of 96 variants · meets every requirement</p>
+            <a class="btn small" href="demo/index.html" data-i18n="cta_demo">Open the app</a>
+          </article>
+          <article class="hm">
+            <p class="hm-k" data-i18n="hm2_k">02 · Manufacturing</p>
+            <p class="hm-v"><b data-count="1.16" data-dec="2">1.16</b><em>mm</em></p>
+            <p class="hm-s" data-i18n="hm2_s">Largest distance from the target curve · 20 bends · springback compensated</p>
+            <a class="btn small" href="fertigung/index.html" data-i18n="cta_demo">Open the app</a>
+          </article>
+        </div>
+      </div>
+      <div class="hero-pin">
+        <svg id="heroPin" viewBox="0 0 400 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>
+        <video id="heroVid" aria-hidden="true" muted loop playsinline preload="metadata" poster="hero_pin.jpg"><source src="hero_pin.mp4" type="video/mp4"><source src="hero_pin.webm" type="video/webm"></video>
+        <div class="pin-label" id="pinLabel" aria-hidden="true"></div>
+        <button type="button" class="vidtoggle" id="heroToggle" aria-label="Pause animation"><span aria-hidden="true">❚❚</span></button>
+      </div>
+      <a class="scrollhint" href="#story" aria-label="Scroll"><span></span></a>
+    </section>
+
+    <!-- 2 · Statement -->
+    <section class="statement reveal">
+      <p data-i18n="statement">A hairpin must keep its distance from neighbouring conductors, respect the minimum bend radius, fit the installation space and be insertable basket by basket. <em>A short conductor is only of value if all of these requirements are met at the same time.</em></p>
+    </section>
+
+
+    <!-- 2b · Zwei Module -->
+    <section class="modules reveal" id="modules">
+      <p class="eyebrow" data-i18n="mod_eyebrow">Two modules</p>
+      <h2 data-i18n="mod_h">From the best shape to a pin that can be made.</h2>
+      <div class="mod-grid">
+        <article class="mod">
+          <p class="mod-num"><span data-i18n="mod_label">Module</span> 1</p>
+          <svg class="pic" viewBox="0 0 360 170" aria-hidden="true">
+<defs>
+<linearGradient id="cuG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6c9a8"/><stop offset=".45" stop-color="#d98b5f"/><stop offset="1" stop-color="#8a4a26"/></linearGradient>
+<radialGradient id="glow1" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#d98b5f" stop-opacity=".30"/><stop offset="1" stop-color="#d98b5f" stop-opacity="0"/></radialGradient>
+</defs>
+<g class="pc-grid"><path d="M14 20 V150 H176"/><path d="M14 50 H176 M14 85 H176 M14 120 H176" opacity=".35"/></g>
+<path d="M14.0 52.0 C17.7 50.7 28.7 41.7 36.0 44.0 C43.3 46.3 50.7 56.0 58.0 66.0 C65.3 76.0 73.0 94.7 80.0 104.0 C87.0 113.3 93.0 120.3 100.0 122.0 C107.0 123.7 114.7 119.3 122.0 114.0 C129.3 108.7 137.7 98.0 144.0 90.0 C150.3 82.0 155.3 71.7 160.0 66.0 C164.7 60.3 170.0 57.7 172.0 56.0" class="pc-band"/>
+<path d="M14.0 52.0 C17.7 50.7 28.7 41.7 36.0 44.0 C43.3 46.3 50.7 56.0 58.0 66.0 C65.3 76.0 73.0 94.7 80.0 104.0 C87.0 113.3 93.0 120.3 100.0 122.0 C107.0 123.7 114.7 119.3 122.0 114.0 C129.3 108.7 137.7 98.0 144.0 90.0 C150.3 82.0 155.3 71.7 160.0 66.0 C164.7 60.3 170.0 57.7 172.0 56.0" class="pc-curve"/>
+<circle cx="36" cy="44" r="3.6" class="pc-s"/><circle cx="58" cy="66" r="3.6" class="pc-s"/><circle cx="100" cy="122" r="3.6" class="pc-s"/><circle cx="144" cy="90" r="3.6" class="pc-s"/><circle cx="160" cy="66" r="3.6" class="pc-s"/>
+<circle cx="100" cy="122" r="9" class="pc-opt"/><circle cx="100" cy="122" r="3.4" class="pc-optc"/>
+<path d="M184 85 H206" class="pc-arrow"/><path d="M200 79 L207 85 L200 91" class="pc-arrow"/>
+<ellipse cx="294" cy="152" rx="62" ry="8" fill="url(#glow1)"/>
+<g class="pc-pin2" transform="translate(-15 7)"><path d="M244 148 L244 104 Q244 96 250 92 L282 70 Q286 67 291 67 L296 67 C302 67 302 59 308 59 L313 59 Q318 59 322 62 L346 80 Q354 86 354 98 L354 148"/></g>
+<g class="pc-pin"><path d="M244 148 L244 104 Q244 96 250 92 L282 70 Q286 67 291 67 L296 67 C302 67 302 59 308 59 L313 59 Q318 59 322 62 L346 80 Q354 86 354 98 L354 148" class="pc-p0"/><path d="M244 148 L244 104 Q244 96 250 92 L282 70 Q286 67 291 67 L296 67 C302 67 302 59 308 59 L313 59 Q318 59 322 62 L346 80 Q354 86 354 98 L354 148" class="pc-p1"/><path d="M244 148 L244 104 Q244 96 250 92 L282 70 Q286 67 291 67 L296 67 C302 67 302 59 308 59 L313 59 Q318 59 322 62 L346 80 Q354 86 354 98 L354 148" class="pc-p2"/></g>
+<path d="M229 112 H244" class="pc-dim"/><path d="M229 108 v8 M244 108 v8" class="pc-dim"/>
+</svg>
+          <h3 data-i18n="mod1_h">Hairpin generation</h3>
+          <p class="mod-lead" data-i18n="mod1_p">Finds the shortest end-winding shape that meets every requirement. Machine learning, verified in CAD.</p>
+          <ul><li data-i18n="mod1_l1">Bayesian optimization of the 3D conductor</li><li data-i18n="mod1_l2">Clearance, bend radius, installation space, insertion sequence</li><li data-i18n="mod1_l3">Complete stator, basket by basket</li></ul>
+          <div class="mod-cta"><a class="btn" href="demo/index.html" data-i18n="mod1_cta">Open the app</a><a class="btn ghost" href="#story" data-i18n="cta_how">How it works</a></div>
+        </article>
+        <article class="mod mod-b">
+          <p class="mod-num"><span data-i18n="mod_label">Module</span> 2</p>
+          <svg class="pic" viewBox="0 0 360 170" aria-hidden="true">
+<defs>
+<linearGradient id="stG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8d939e"/><stop offset=".5" stop-color="#4b505a"/><stop offset="1" stop-color="#2a2d34"/></linearGradient>
+<linearGradient id="stS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3d414a"/><stop offset="1" stop-color="#1c1e23"/></linearGradient>
+<radialGradient id="glow2" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#d98b5f" stop-opacity=".28"/><stop offset="1" stop-color="#d98b5f" stop-opacity="0"/></radialGradient>
+</defs>
+<ellipse cx="96" cy="150" rx="70" ry="9" fill="url(#glow2)"/>
+<circle cx="96" cy="108" r="34" fill="url(#stS)"/><rect x="62" y="84" width="68" height="24" fill="url(#stS)" opacity="0"/>
+<circle cx="96" cy="98" r="34" fill="url(#stG)" stroke="#9aa0ab" stroke-width="1.2"/>
+<circle cx="96" cy="98" r="9" fill="#23252b" stroke="#6c727d" stroke-width="1"/>
+<rect x="132" y="104" width="22" height="46" rx="3" fill="url(#stS)" stroke="#6c727d" stroke-width="1"/>
+<path d="M126 150 V98 A30 30 0 0 0 96 68 H58" class="pc-w0"/><path d="M126 150 V98 A30 30 0 0 0 96 68 H58" class="pc-w1"/><path d="M126 150 V98 A30 30 0 0 0 96 68 H58" class="pc-w2"/>
+<path d="M126 98 A30 30 0 0 0 100 68.2 L64 62" class="pc-ghost"/>
+<path d="M126 98 A30 30 0 0 0 126 98" class="pc-ghost"/>
+<path d="M104 90 A24 24 0 0 1 120 98" class="pc-ang" opacity="0"/>
+<text x="88" y="132" class="pc-t">α</text>
+<path d="M184 85 H206" class="pc-arrow"/><path d="M200 79 L207 85 L200 91" class="pc-arrow"/>
+<g class="pc-grid"><path d="M214 20 V84 H350"/></g>
+<path d="M216 74 C236 66 246 44 266 40 S316 30 348 26" class="pc-tgt"/>
+<path d="M216 76 C238 70 244 50 268 44 S312 38 348 32" class="pc-curve"/>
+<path d="M240 59 v-8 M266 43 v-5 M296 38 v-9 M324 36 v-8" class="pc-dev"/>
+<g class="pc-bars"><rect x="216" y="116" width="9" height="22" rx="2"/><rect x="230" y="106" width="9" height="32" rx="2"/><rect x="244" y="124" width="9" height="14" rx="2"/><rect x="258" y="112" width="9" height="26" rx="2"/><rect x="272" y="96" width="9" height="42" rx="2"/><rect x="286" y="120" width="9" height="18" rx="2"/><rect x="300" y="108" width="9" height="30" rx="2"/><rect x="314" y="124" width="9" height="14" rx="2"/><rect x="328" y="100" width="9" height="38" rx="2"/></g>
+<path d="M214 138 H350" class="pc-base"/>
+<text x="216" y="156" class="pc-t2">L · τ · ψ · α</text>
+</svg>
+          <h3 data-i18n="mod2_h">Manufacturing</h3>
+          <p class="mod-lead" data-i18n="mod2_p">Turns the optimized pin into a bend program and shows what the wire goes through, including springback.</p>
+          <ul><li data-i18n="mod2_l1">Bend program from the 3D centreline: feed, twist, plane, bend</li><li data-i18n="mod2_l2">Stress-strain curve and springback, live with the material</li><li data-i18n="mod2_l3">0.9 to 1.2 mm from the target curve with 20 bends</li></ul>
+          <div class="mod-cta"><a class="btn" href="fertigung/index.html" data-i18n="mod2_cta">Open the app</a><a class="btn ghost" href="#mfg" data-i18n="cta_how">How it works</a></div>
+        </article>
+      </div>
+      <p class="mod-note" data-i18n="mod_note">Both modules use the same pin. Material and machine values in the manufacturing module are assumptions, not measured machine data.</p>
+    </section>
+
+
+    <!-- Kapitel Generation -->
+    <section class="chapter reveal" id="gen">
+      <p class="chap-k"><span data-i18n="mod_label">Module</span> 1</p>
+      <h2 data-i18n="ch1_h">Generation</h2>
+      <p class="lead" data-i18n="ch1_p"></p>
+    </section>
+
+    <!-- 3 · Story (pinned, steps change the picture) -->
+    <section class="story" id="story">
+      <div class="story-text">
+        <article class="step" data-step="0">
+          <p class="num">01</p>
+          <h2 data-i18n="s1_h"></h2>
+          <p data-i18n="s1_p"></p>
+        </article>
+        <article class="step" data-step="1">
+          <p class="num">02</p>
+          <h2 data-i18n="s2_h"></h2>
+          <p data-i18n="s2_p"></p>
+        </article>
+        <article class="step" data-step="2">
+          <p class="num">03 · <span data-i18n="ml"></span></p>
+          <h2 data-i18n="s3_h"></h2>
+          <p data-i18n="s3_p"></p>
+          <p class="chips" data-i18n="s3_c"></p>
+        </article>
+        <article class="step" data-step="3">
+          <p class="num">04 · <span data-i18n="ml"></span></p>
+          <h2 data-i18n="s4_h"></h2>
+          <p data-i18n="s4_p"></p>
+          <p class="chips" data-i18n="s4_c"></p>
+        </article>
+        <article class="step" data-step="4">
+          <p class="num">05 · <span data-i18n="ml"></span></p>
+          <h2 data-i18n="s5_h"></h2>
+          <p data-i18n="s5_p"></p>
+          <p class="chips" data-i18n="s5_c"></p>
+        </article>
+        <article class="step" data-step="5">
+          <p class="num">06 · <span data-i18n="ml"></span></p>
+          <h2 data-i18n="sb_h"></h2>
+          <p data-i18n="sb_p"></p>
+          <p class="chips" data-i18n="sb_c"></p>
+        </article>
+        <article class="step" data-step="6">
+          <p class="num">07 · <span data-i18n="ml"></span></p>
+          <h2 data-i18n="sc_h"></h2>
+          <p data-i18n="sc_p"></p>
+          <p class="chips" data-i18n="sc_c"></p>
+        </article>
+        <article class="step" data-step="7">
+          <p class="num">08</p>
+          <h2 data-i18n="s7_h"></h2>
+          <p data-i18n="s7_p"></p>
+          
+        </article>
+      </div>
+      <div class="story-visual">
+        <div class="stage" id="stage">
+          <svg id="stagePin" viewBox="0 0 600 440" preserveAspectRatio="xMidYMid meet" class="layer on"></svg>
+          <svg id="stagePar" viewBox="0 0 600 440" preserveAspectRatio="xMidYMid meet" class="layer"></svg>
+          <svg id="stageGP" viewBox="0 0 600 440" preserveAspectRatio="xMidYMid meet" class="layer"></svg>
+          <svg id="stageMap" viewBox="0 0 600 440" preserveAspectRatio="xMidYMid meet" class="layer"></svg>
+          <svg id="stageFront" viewBox="0 0 600 440" preserveAspectRatio="xMidYMid meet" class="layer"></svg>
+          <div class="layer stagecut"><img id="cutImg" alt="" width="1040" height="768" loading="lazy"></div>
+          <div class="tags" id="tags"></div>
+          <div class="pickbox" id="pickbox"><label for="gapReq" data-i18n="pick_l"></label><input type="range" id="gapReq" min="0" max="1000" value="300" aria-label="Minimum clearance"><output id="gapOut"></output></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 · Results -->
+    <section class="results" id="results">
+      <h2 class="reveal" data-i18n="r_h"></h2>
+      <div class="r-grid">
+        <article class="rc c7 reveal">
+          <p class="rc-k" data-i18n="r_len_k"></p>
+          <p class="rc-big"><b data-count="54.2" data-dec="1">54.2</b><em>m</em><span class="rc-sep"></span><b data-count="7.33" data-dec="2">7.33</b><em>kg</em></p>
+          <div class="stack" id="stackLen"></div>
+          <p class="rc-note" data-i18n="r_len_n"></p>
+        </article>
+        <article class="rc c5 reveal">
+          <p class="rc-k" data-i18n="r_pins_k"></p>
+          <p class="rc-big"><b data-count="108">108</b><em data-i18n="r_pins_u"></em></p>
+          <div class="dotrows" id="dotsPins"></div>
+          <p class="rc-note" data-i18n="r_pins_n"></p>
+        </article>
+        <article class="rc c4 reveal">
+          <p class="rc-k" data-i18n="r_each_k"></p>
+          <div class="hbars" id="barsLen"></div>
+          <p class="rc-note" data-i18n="r_each_n"></p>
+        </article>
+        <article class="rc c4 reveal">
+          <p class="rc-k" data-i18n="r_h_k"></p>
+          <p class="rc-big"><b data-count="66.1" data-dec="1">66.1</b><em>mm</em></p>
+          <div class="vbars" id="barsH"></div>
+          <p class="rc-note" data-i18n="r_h_n"></p>
+        </article>
+        <article class="rc c4 reveal">
+          <p class="rc-k" data-i18n="r_t_k"></p>
+          <p class="rc-big"><b data-count="23">23</b><em data-i18n="r_t_u"></em></p>
+          <div class="hbars" id="barsT"></div>
+          <p class="rc-note" data-i18n="r_t_n"></p>
+        </article>
+        <article class="rc c12 reveal">
+          <div class="rc-head">
+            <p class="rc-k" data-i18n="r_v_k"></p>
+            <p class="rc-big"><b data-count="1724">1724</b><em data-i18n="r_v_u"></em></p>
+          </div>
+          <div class="dotrows dv" id="dotsVar"></div>
+          <p class="rc-note" data-i18n="r_v_n"></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 5 · Tilted screenshots -->
+    <section class="shots">
+      <h2 class="reveal" data-i18n="shots_h">Everything visible while it computes</h2>
+            <div class="shot-item reveal">
+        <figure class="tilt" data-tilt="-1"><img data-img="screening" alt="" width="1600" height="876" loading="lazy"></figure>
+        <div class="shot-copy"><p class="num">01</p><h3 data-i18n="sh1_h"></h3><p data-i18n="sh1_p"></p></div>
+      </div>
+      <div class="shot-item rev reveal">
+        <figure class="tilt" data-tilt="1"><img data-img="optimization" alt="" width="1600" height="876" loading="lazy"></figure>
+        <div class="shot-copy"><p class="num">02</p><h3 data-i18n="sh2_h"></h3><p data-i18n="sh2_p"></p></div>
+      </div>
+      <div class="shot-item reveal">
+        <figure class="tilt" data-tilt="-1"><img data-img="result" alt="" width="1600" height="876" loading="lazy"></figure>
+        <div class="shot-copy"><p class="num">03</p><h3 data-i18n="sh3_h"></h3><p data-i18n="sh3_p"></p></div>
+      </div>
+    </section>
+
+    <!-- 6 · Demo -->
+    <section class="demo reveal">
+      <div class="demo-copy">
+        <h2 data-i18n="d_h">App preview</h2>
+        <p data-i18n="d_p">The demo opens the finished runs: switch baskets, review each phase, pick other pins, cut through the stator. Computing new runs is not part of the demo.</p>
+        <a class="btn btn-2l" href="demo/index.html"><span data-i18n="cta_demo">Open the app</span><small data-i18n="desk_only"></small></a>
+        <a class="btn ghost" id="contact" href="#" data-i18n="d_access">Get in touch</a>
+        <p class="src"><span data-i18n="d_more">An application by Fronteer Lab</span> · fronteerlab.com</p>
+      </div>
+      <figure class="tilt big" data-tilt="1"><img data-img="total" alt="" width="1600" height="876" loading="lazy"></figure>
+    </section>
+
+
+    <!-- Kapitel Manufacturing -->
+    <section class="chapter split reveal" id="mfg">
+      <div class="chap-copy">
+        <p class="chap-k"><span data-i18n="mod_label">Module</span> 2</p>
+        <h2 data-i18n="ch2_h">Manufacturing</h2>
+        <p class="lead" data-i18n="ch2_p"></p>
+      </div>
+      <div class="chap-pin"><video id="mfgVid" aria-hidden="true" muted loop playsinline preload="metadata" poster="mfg_animation_en.jpg"><source src="mfg_animation_en.mp4" type="video/mp4"><source src="mfg_animation_en.webm" type="video/webm"></video><button type="button" class="vidtoggle" id="vidToggle" aria-label="Pause animation"><span aria-hidden="true">❚❚</span></button></div>
+    </section>
+
+    <section class="mfg-method reveal" id="mfg-method">
+      <p class="eyebrow" data-i18n="mm_k">Method</p>
+      <h2 data-i18n="mm_h">Three building blocks</h2>
+      <div class="mm-grid">
+        <article class="mm"><p class="mm-n">1</p><h3 data-i18n="mm1_h"></h3><p data-i18n="mm1_p"></p><p class="mm-f" data-i18n="mm1_f"></p></article>
+        <article class="mm"><p class="mm-n">2</p><h3 data-i18n="mm2_h"></h3><p data-i18n="mm2_p"></p><p class="mm-f" data-i18n="mm2_f"></p></article>
+        <article class="mm"><p class="mm-n">3</p><h3 data-i18n="mm3_h"></h3><p data-i18n="mm3_p"></p><p class="mm-f" data-i18n="mm3_f"></p></article>
+      </div>
+    </section>
+
+    <section class="results mfg-results" id="mfg-results">
+      <h2 class="reveal" data-i18n="r_h"></h2>
+      <div class="r-grid">
+        <article class="rc c4 reveal"><p class="rc-k" data-i18n="mr1_k"></p><p class="rc-big"><b data-count="1.16" data-dec="2">1.16</b><em>mm</em></p><div class="hbars" id="mbDev"></div><p class="rc-note" data-i18n="mr1_n"></p></article>
+        <article class="rc c4 reveal"><p class="rc-k" data-i18n="mr2_k"></p><p class="rc-big"><b data-count="9" data-dec="0">9</b><em>mm</em><span class="rc-sep"></span><b data-count="1" data-dec="0">1</b><em>mm</em></p><div class="hbars" id="mbSpr"></div><p class="rc-note" data-i18n="mr2_n"></p></article>
+        <article class="rc c4 reveal"><p class="rc-k" data-i18n="mr3_k"></p><p class="rc-big"><b data-count="20">20</b><em data-i18n="mr3_u"></em></p><div class="dotrows" id="mbDots"></div><p class="rc-note" data-i18n="mr3_n"></p></article>
+      </div>
+    </section>
+
+    <section class="shots mfg-shots">
+      <h2 class="reveal" data-i18n="ms_h">The module at work</h2>
+      <div class="shot-item reveal">
+        <figure class="tilt" data-tilt="-1"><img data-img="mf_machine" alt="" width="1600" height="902" loading="lazy"></figure>
+        <div class="shot-copy"><p class="num">01</p><h3 data-i18n="mf2_h"></h3><p data-i18n="mf2_p"></p></div>
+      </div>
+      <div class="shot-item rev reveal">
+        <figure class="tilt" data-tilt="1"><img data-img="mf_spring" alt="" width="1600" height="902" loading="lazy"></figure>
+        <div class="shot-copy"><p class="num">02</p><h3 data-i18n="mf4_h"></h3><p data-i18n="mf4_p"></p></div>
+      </div>
+    </section>
+
+    <section class="demo reveal">
+      <div class="demo-copy">
+        <h2 data-i18n="mg_h">Manufacturing app preview</h2>
+        <p data-i18n="mg_p"></p>
+        <a class="btn" href="fertigung/index.html" data-i18n="mod2_cta">Open the app</a>
+      </div>
+      <figure class="tilt big" data-tilt="1"><img data-img="mf_pin" alt="" width="1600" height="902" loading="lazy"></figure>
+    </section>
+
+    <!-- 7 · Ausblick -->
+    <section class="outlook reveal" id="outlook">
+      <p class="eyebrow" data-i18n="o_tag"></p>
+      <h2 data-i18n="o_h"></h2>
+      <p class="lead" data-i18n="o_p"></p>
+      <div class="o-cards">
+        <article class="o-card">
+          <svg viewBox="0 0 160 90" aria-hidden="true"><path class="o-a" d="M30 84 V44 L52 12"/><path class="o-a" d="M70 84 V44 L48 12"/><path class="o-b" d="M100 84 V44 L122 12"/><path class="o-b" d="M140 84 V44 L118 12"/><path class="o-w" d="M122 12 l-4 0"/></svg>
+          <h3 data-i18n="o1_h"></h3><p data-i18n="o1_p"></p>
+        </article>
+        <article class="o-card">
+          <svg viewBox="0 0 160 90" aria-hidden="true"><ellipse class="o-a" cx="80" cy="48" rx="56" ry="26"/><ellipse class="o-b" cx="80" cy="48" rx="40" ry="18"/><path class="o-a" d="M24 48 v-20 M136 48 v-20"/><path class="o-b" d="M80 30 v-18"/></svg>
+          <h3 data-i18n="o2_h"></h3><p data-i18n="o2_p"></p>
+        </article>
+        <article class="o-card">
+          <svg viewBox="0 0 160 90" aria-hidden="true"><path class="o-a" d="M24 84 V10"/><path class="o-b" d="M62 84 V30 Q62 10 82 10 H100 Q120 10 120 30 V84"/><path class="o-a" d="M140 84 V34 L128 50"/></svg>
+          <h3 data-i18n="o3_h"></h3><p data-i18n="o3_p"></p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>fronteerlab.com · Fronteer Hairpin · <a href="mailto:contact@fronteerlab.com">contact@fronteerlab.com</a></span>
+    <span><span data-i18n="foot">Results shown are from saved optimization runs.</span> · <a href="datenschutz.html">Datenschutz / Privacy</a></span>
+  </footer>
+  <script src="data.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+# Dateien, die nicht ins Repository gehören
+.DS_Store
+Thumbs.db
+*.log
+*.bak
+*.tmp
+.env
+node_modules/
+__pycache__/
+*.py[cod]
