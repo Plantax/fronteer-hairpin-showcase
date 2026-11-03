@@ -4,9 +4,10 @@ Fronteer Hairpin generates end-winding shapes for hairpin stators under geometri
 
 Website: https://fronteerlab.com · Contact: contact@fronteerlab.com
 
-![Manufacturing animation: the pin is formed bend by bend from the machine's point of view](media/mfg_animation_en.gif)
-
-*Model animation of the manufacturing module (assumed material and tool data): a forming program turns the wire into the optimized pin, bend by bend.*
+<p align="center">
+  <img src="media/module-1-generation.png" width="49%" alt="Module 1, hairpin generation: Bayesian optimization finds the shortest end-winding shape that meets every requirement.">
+  <img src="media/module-2-manufacturing.png" width="49%" alt="Module 2, manufacturing: a forming program is fitted to the optimized 3D centreline, with springback compensated.">
+</p>
 
 ## Contents
 
@@ -16,7 +17,7 @@ Website: https://fronteerlab.com · Contact: contact@fronteerlab.com
 | `site/` | The project website: static HTML, CSS and presentation scripts (story animations, language switch), result data shown on the site, and pre-rendered videos of the hero pin and of the manufacturing animation. |
 | `site/demo/`, `site/fertigung/` | Preview pages of the generation app and of the manufacturing app. They show screenshots only. |
 | `site/shots/` | Screenshots of the two apps (three baskets with their phases, the complete stator, the manufacturing program per basket). |
-| `media/` | Lightweight animated GIFs of the manufacturing animation (English, German), small enough for phones. |
+| `media/` | The two module images shown above. |
 
 ## About the app previews
 
