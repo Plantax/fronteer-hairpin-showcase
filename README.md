@@ -4,6 +4,8 @@ Fronteer Hairpin generates end-winding shapes for hairpin stators under geometri
 
 Website: https://fronteerlab.com · Contact: contact@fronteerlab.com
 
+Technical report: https://doi.org/10.5281/zenodo.23965250 (Zenodo, DOI 10.5281/zenodo.23965250 always resolves to the latest version)
+
 <p align="center">
   <img src="media/module-1-generation.png" width="49%" alt="Module 1, hairpin generation: Bayesian optimization finds the shortest end-winding shape that meets every requirement.">
   <img src="media/module-2-manufacturing.png" width="49%" alt="Module 2, manufacturing: a forming program is fitted to the optimized 3D centreline, with springback compensated.">
@@ -13,7 +15,7 @@ Website: https://fronteerlab.com · Contact: contact@fronteerlab.com
 
 | Folder | Content |
 |---|---|
-| `report/` | Technical report (PDF, 4 pages, not peer reviewed): constraint-driven generation and forming-program derivation for hairpin end windings. |
+| `report/` | Technical report (PDF, 4 pages, not peer reviewed; also published at Zenodo, DOI 10.5281/zenodo.23965250): constraint-driven generation and forming-program derivation for hairpin end windings. |
 | `site/` | The project website: static HTML, CSS and presentation scripts (story animations, language switch), result data shown on the site, and pre-rendered videos of the hero pin and of the manufacturing animation. |
 | `site/demo/`, `site/fertigung/` | Preview pages of the generation app and of the manufacturing app. They show screenshots only. |
 | `site/shots/` | Screenshots of the two apps (three baskets with their phases, the complete stator, the manufacturing program per basket). |
