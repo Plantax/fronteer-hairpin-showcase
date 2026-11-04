@@ -396,3 +396,9 @@ figure img, .stagecut img, .tilt img { height: auto; }
   .step, .stage .layer, .hb u i, .vb u i, .dotrows i, .stagecut img { transition: none !important; }
   .chap-pin .vidtoggle, .hero-pin .vidtoggle { display: none; }
 }
+
+/* GitHub-Symbol in der Kopfzeile */
+.nav nav a.gh { display: inline-flex; align-items: center; color: var(--muted); }
+.nav nav a.gh svg { width: 20px; height: 20px; fill: currentColor; }
+.nav nav a.gh:hover { color: var(--text); }
+@media (max-width: 900px) { .nav nav a.gh { display: inline-flex; } }
