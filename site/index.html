@@ -22,62 +22,50 @@
 <body>
   <a class="skip" href="#top" data-i18n="skip">Skip to content</a>
   <header class="nav" id="nav">
-    <a class="brand" href="#top"><i></i><span translate="no">Fronteer Hairpin</span></a>
-    <nav>
-      <a href="#modules" data-i18n="nav_modules">Modules</a>
-      <a href="#gen" data-i18n="nav_gen">Generation</a>
-      <a href="#mfg" data-i18n="nav_mfg">Manufacturing</a>
+    <a class="brand" href="#suite"><i></i><span translate="no">Fronteer Hairpin</span></a>
+    <nav class="tabs" role="tablist" aria-label="Modules" data-i18n-aria="ar_mods">
+      <a href="#suite" id="t-suite" role="tab" data-i18n="tab_suite" aria-selected="true"></a>
+      <a href="#winding" id="t-winding" role="tab" data-i18n="tab_winding" aria-selected="false"></a>
+      <a href="#forming" id="t-forming" role="tab" data-i18n="tab_forming" aria-selected="false"></a>
+      <a href="#twist" id="t-twist" role="tab" data-i18n="tab_twist" aria-selected="false"></a>
+      <a href="#busbar" id="t-busbar" role="tab" data-i18n="tab_busbar" aria-selected="false"></a>
+      <a href="#manufacturing" id="t-manufacturing" role="tab" data-i18n="tab_mfg" aria-selected="false"></a>
+    </nav>
+    <nav class="util">
       <a href="mailto:contact@fronteerlab.com" id="navcontact" data-i18n="nav_contact">Contact</a>
-      <a class="gh" href="https://github.com/Plantax/fronteer-hairpin-showcase" target="_blank" rel="noopener" aria-label="GitHub repository" title="GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
-      <select id="lang" aria-label="Language"><option value="en">EN</option><option value="de">DE</option></select>
-      <a class="btn small" href="#modules" data-i18n="nav_demo">Apps</a>
+      <a class="gh" href="https://github.com/Plantax/fronteer-hairpin-showcase" target="_blank" rel="noopener" aria-label="GitHub repository" data-i18n-aria="ar_gh" title="GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+      <select id="lang" aria-label="Language" data-i18n-aria="ar_lang"><option value="en">EN</option><option value="de">DE</option></select>
     </nav>
   </header>
 
   <main id="top">
-    <!-- 1 · Hero -->
-    <section class="hero">
+  <div class="tabpanel" id="p-suite" data-tab="suite" role="tabpanel" aria-labelledby="t-suite">
+    <section class="hero shero">
       <div class="hero-copy">
-        <p class="eyebrow" data-i18n="eyebrow">Hairpin end windings</p>
-        <h1 data-i18n="h1">The shortest hairpin<br>that meets every requirement.</h1>
-        <p class="lead" data-i18n="lead">Every candidate shape is a real CAD model, measured against clearance, bend radius, build space and assembly order. The optimizer keeps the best one.</p>
-        <div class="hero-mods">
-          <article class="hm">
-            <p class="hm-k" data-i18n="hm1_k">01 · Generation</p>
-            <p class="hm-v"><b id="heroLen" data-count="174.14" data-dec="2">174.14</b><em>mm</em></p>
-            <p class="hm-s" data-i18n="hm1_s">End-winding length · best of 96 variants · meets every requirement</p>
-            <a class="btn small" href="demo/index.html" data-i18n="cta_demo">Open the app</a>
-          </article>
-          <article class="hm">
-            <p class="hm-k" data-i18n="hm2_k">02 · Manufacturing</p>
-            <p class="hm-v"><b data-count="1.16" data-dec="2">1.16</b><em>mm</em></p>
-            <p class="hm-s" data-i18n="hm2_s">Largest distance from the target curve · 20 bends · springback compensated</p>
-            <a class="btn small" href="fertigung/index.html" data-i18n="cta_demo">Open the app</a>
-          </article>
-        </div>
+        <p class="eyebrow" data-i18n="su_eyebrow">Hairpin stator · process chain</p>
+        <h1 data-i18n="su_h1">From winding scheme<br>to finished stator.</h1>
+        <p class="lead" data-i18n="su_lead"></p>
+        <ol class="rail" aria-label="Process chain" data-i18n-aria="ar_chain"><li><a href="#winding"><i></i><b data-i18n="st1"></b><small data-i18n="st1_d"></small></a></li><li><a href="#forming"><i></i><b data-i18n="st2"></b><small data-i18n="st2_d"></small></a></li><li><a href="#twist"><i></i><b data-i18n="st3"></b><small data-i18n="st3_d"></small></a></li><li><a href="#twist"><i></i><b data-i18n="st4"></b><small data-i18n="st4_d"></small></a></li><li><a href="#busbar"><i></i><b data-i18n="st5"></b><small data-i18n="st5_d"></small></a></li><li><a href="#manufacturing"><i></i><b data-i18n="st6"></b><small data-i18n="st6_d"></small></a></li></ol>
+        <div class="mod-cta"><a class="btn" href="suite/index.html" data-i18n="cta_suite">Suite preview</a><a class="btn ghost" href="#modules" data-i18n="cta_modules">The five modules</a></div>
+        <p class="status"><span data-i18n="su_status_k">Status</span> <b data-i18n="su_status">Feasibility study</b> <span data-i18n="su_status_p"></span></p>
       </div>
-      <div class="hero-pin">
-        <svg id="heroPin" viewBox="0 0 400 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>
-        <video id="heroVid" aria-hidden="true" muted loop playsinline preload="metadata" poster="hero_pin.jpg"><source src="hero_pin.mp4" type="video/mp4"><source src="hero_pin.webm" type="video/webm"></video>
-        <div class="pin-label" id="pinLabel" aria-hidden="true"></div>
-        <button type="button" class="vidtoggle" id="heroToggle" aria-label="Pause animation"><span aria-hidden="true">❚❚</span></button>
-      </div>
-      <a class="scrollhint" href="#story" aria-label="Scroll"><span></span></a>
+      <figure class="shero-fig"><img data-img="su_full_stator" alt="" width="1600" height="1000"></figure>
     </section>
-
-    <!-- 2 · Statement -->
-    <section class="statement reveal">
-      <p data-i18n="statement">A hairpin must keep its distance from neighbouring conductors, respect the minimum bend radius, fit the installation space and be insertable basket by basket. <em>A short conductor is only of value if all of these requirements are met at the same time.</em></p>
-    </section>
-
-
     <!-- 2b · Zwei Module -->
     <section class="modules reveal" id="modules">
       <p class="eyebrow" data-i18n="mod_eyebrow">Two modules</p>
       <h2 data-i18n="mod_h">From the best shape to a pin that can be made.</h2>
-      <div class="mod-grid">
-        <article class="mod">
+      <div class="mod-grid five">
+        <article class="mod mod-n">
           <p class="mod-num"><span data-i18n="mod_label">Module</span> 1</p>
+          <svg class="pic" viewBox="0 0 360 170" aria-hidden="true"><defs><linearGradient id="cuW" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6c9a8"/><stop offset=".45" stop-color="#d98b5f"/><stop offset="1" stop-color="#8a4a26"/></linearGradient><linearGradient id="stW" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8d939e"/><stop offset=".5" stop-color="#4b505a"/><stop offset="1" stop-color="#2a2d34"/></linearGradient><radialGradient id="glW" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#d98b5f" stop-opacity=".30"/><stop offset="1" stop-color="#d98b5f" stop-opacity="0"/></radialGradient></defs><ellipse cx="292" cy="156" rx="76" ry="9" fill="url(#glW)"/><g class="pc-grid"><circle cx="95" cy="88" r="60"/><circle cx="95" cy="88" r="31" opacity=".35"/></g><path d="M95.0 52.0 L95.0 36.0" stroke="#2a78d6" stroke-width="5.5" stroke-linecap="round"/><path d="M107.3 54.2 L112.8 39.1" stroke="#2a78d6" stroke-width="5.5" stroke-linecap="round"/><path d="M118.1 60.4 L128.4 48.2" stroke="#eb6834" stroke-width="5.5" stroke-linecap="round"/><path d="M126.2 70.0 L140.0 62.0" stroke="#eb6834" stroke-width="5.5" stroke-linecap="round"/><path d="M130.5 81.7 L146.2 79.0" stroke="#1baf7a" stroke-width="5.5" stroke-linecap="round"/><path d="M130.5 94.3 L146.2 97.0" stroke="#1baf7a" stroke-width="5.5" stroke-linecap="round"/><path d="M126.2 106.0 L140.0 114.0" stroke="#2a78d6" stroke-width="5.5" stroke-linecap="round"/><path d="M118.1 115.6 L128.4 127.8" stroke="#2a78d6" stroke-width="5.5" stroke-linecap="round"/><path d="M107.3 121.8 L112.8 136.9" stroke="#eb6834" stroke-width="5.5" stroke-linecap="round"/><path d="M95.0 124.0 L95.0 140.0" stroke="#eb6834" stroke-width="5.5" stroke-linecap="round"/><path d="M82.7 121.8 L77.2 136.9" stroke="#1baf7a" stroke-width="5.5" stroke-linecap="round"/><path d="M71.9 115.6 L61.6 127.8" stroke="#1baf7a" stroke-width="5.5" stroke-linecap="round"/><path d="M63.8 106.0 L50.0 114.0" stroke="#2a78d6" stroke-width="5.5" stroke-linecap="round"/><path d="M59.5 94.3 L43.8 97.0" stroke="#2a78d6" stroke-width="5.5" stroke-linecap="round"/><path d="M59.5 81.7 L43.8 79.0" stroke="#eb6834" stroke-width="5.5" stroke-linecap="round"/><path d="M63.8 70.0 L50.0 62.0" stroke="#eb6834" stroke-width="5.5" stroke-linecap="round"/><path d="M71.9 60.4 L61.6 48.2" stroke="#1baf7a" stroke-width="5.5" stroke-linecap="round"/><path d="M82.7 54.2 L77.2 39.1" stroke="#1baf7a" stroke-width="5.5" stroke-linecap="round"/><path d="M46.5 60.0 A70 70 0 0 1 143.5 60.0" class="pc-curve"/><path d="M143.5 60.0 A70 70 0 0 1 95.0 144.0" class="pc-ghost"/><circle cx="46.5" cy="60.0" r="3" style="fill:#f0b48e;stroke:#131316;stroke-width:1.4"/><circle cx="143.5" cy="60.0" r="3" style="fill:#f0b48e;stroke:#131316;stroke-width:1.4"/><circle cx="95.0" cy="144.0" r="3" style="fill:#f0b48e;stroke:#131316;stroke-width:1.4"/><path d="M184 85 H206" class="pc-arrow"/><path d="M200 79 L207 85 L200 91" class="pc-arrow"/><path d="M244.2 122.0 V87.2 Q244.2 76.0 252.2 72.0 Q260.2 76.0 260.2 87.2 V122.0" fill="none" stroke="#5a2f17" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M244.2 122.0 V87.2 Q244.2 76.0 252.2 72.0 Q260.2 76.0 260.2 87.2 V122.0" fill="none" stroke="url(#cuW)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M244.2 122.0 V87.2 Q244.2 76.0 252.2 72.0 Q260.2 76.0 260.2 87.2 V122.0" class="pc-p2"/><path d="M261.0 117.6 V82.8 Q261.0 71.6 269.0 67.6 Q277.0 71.6 277.0 82.8 V117.6" fill="none" stroke="#5a2f17" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M261.0 117.6 V82.8 Q261.0 71.6 269.0 67.6 Q277.0 71.6 277.0 82.8 V117.6" fill="none" stroke="url(#cuW)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M261.0 117.6 V82.8 Q261.0 71.6 269.0 67.6 Q277.0 71.6 277.0 82.8 V117.6" class="pc-p2"/><path d="M284.0 116.0 V81.2 Q284.0 70.0 292.0 66.0 Q300.0 70.0 300.0 81.2 V116.0" fill="none" stroke="#5a2f17" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M284.0 116.0 V81.2 Q284.0 70.0 292.0 66.0 Q300.0 70.0 300.0 81.2 V116.0" fill="none" stroke="url(#cuW)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M284.0 116.0 V81.2 Q284.0 70.0 292.0 66.0 Q300.0 70.0 300.0 81.2 V116.0" class="pc-p2"/><path d="M307.0 117.6 V82.8 Q307.0 71.6 315.0 67.6 Q323.0 71.6 323.0 82.8 V117.6" fill="none" stroke="#5a2f17" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M307.0 117.6 V82.8 Q307.0 71.6 315.0 67.6 Q323.0 71.6 323.0 82.8 V117.6" fill="none" stroke="url(#cuW)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M307.0 117.6 V82.8 Q307.0 71.6 315.0 67.6 Q323.0 71.6 323.0 82.8 V117.6" class="pc-p2"/><path d="M323.8 122.0 V87.2 Q323.8 76.0 331.8 72.0 Q339.8 76.0 339.8 87.2 V122.0" fill="none" stroke="#5a2f17" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M323.8 122.0 V87.2 Q323.8 76.0 331.8 72.0 Q339.8 76.0 339.8 87.2 V122.0" fill="none" stroke="url(#cuW)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M323.8 122.0 V87.2 Q323.8 76.0 331.8 72.0 Q339.8 76.0 339.8 87.2 V122.0" class="pc-p2"/><ellipse cx="292" cy="128" rx="58" ry="16" fill="url(#stW)" stroke="#9aa0ab" stroke-width="1.2"/><path d="M234 128 V142 A58 16 0 0 0 350 142 V128" fill="#23252b" stroke="#6c727d" stroke-width="1"/><ellipse cx="292" cy="128" rx="34" ry="9" fill="#131316" stroke="#6c727d" stroke-width="1"/><path d="M324.4 135.2 V95.8 Q324.4 83.2 333.4 78.7 Q342.4 83.2 342.4 95.8 V135.2" fill="none" stroke="#5a2f17" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M324.4 135.2 V95.8 Q324.4 83.2 333.4 78.7 Q342.4 83.2 342.4 95.8 V135.2" fill="none" stroke="url(#cuW)" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M324.4 135.2 V95.8 Q324.4 83.2 333.4 78.7 Q342.4 83.2 342.4 95.8 V135.2" class="pc-p2"/><path d="M299.8 141.2 V101.8 Q299.8 89.2 308.8 84.7 Q317.8 89.2 317.8 101.8 V141.2" fill="none" stroke="#5a2f17" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M299.8 141.2 V101.8 Q299.8 89.2 308.8 84.7 Q317.8 89.2 317.8 101.8 V141.2" fill="none" stroke="url(#cuW)" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M299.8 141.2 V101.8 Q299.8 89.2 308.8 84.7 Q317.8 89.2 317.8 101.8 V141.2" class="pc-p2"/><path d="M266.2 141.2 V101.8 Q266.2 89.2 275.2 84.7 Q284.2 89.2 284.2 101.8 V141.2" fill="none" stroke="#5a2f17" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M266.2 141.2 V101.8 Q266.2 89.2 275.2 84.7 Q284.2 89.2 284.2 101.8 V141.2" fill="none" stroke="url(#cuW)" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M266.2 141.2 V101.8 Q266.2 89.2 275.2 84.7 Q284.2 89.2 284.2 101.8 V141.2" class="pc-p2"/><path d="M241.6 135.2 V95.8 Q241.6 83.2 250.6 78.7 Q259.6 83.2 259.6 95.8 V135.2" fill="none" stroke="#5a2f17" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M241.6 135.2 V95.8 Q241.6 83.2 250.6 78.7 Q259.6 83.2 259.6 95.8 V135.2" fill="none" stroke="url(#cuW)" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M241.6 135.2 V95.8 Q241.6 83.2 250.6 78.7 Q259.6 83.2 259.6 95.8 V135.2" class="pc-p2"/></svg>
+          <h3 data-i18n="mod_winding_h"></h3>
+          <p class="mod-lead" data-i18n="mod_winding_p"></p>
+          <ul><li data-i18n="mod_winding_l1"></li><li data-i18n="mod_winding_l2"></li><li data-i18n="mod_winding_l3"></li></ul>
+          <div class="mod-cta"><a class="btn" href="suite/index.html#s=0" data-i18n="cta_suite_view">Open in the suite preview</a><a class="btn ghost" href="#winding" data-i18n="cta_how">How it works</a></div>
+        </article>
+        <article class="mod">
+          <p class="mod-num"><span data-i18n="mod_label">Module</span> 2</p>
           <svg class="pic" viewBox="0 0 360 170" aria-hidden="true">
 <defs>
 <linearGradient id="cuG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6c9a8"/><stop offset=".45" stop-color="#d98b5f"/><stop offset="1" stop-color="#8a4a26"/></linearGradient>
@@ -97,10 +85,26 @@
           <h3 data-i18n="mod1_h">Hairpin generation</h3>
           <p class="mod-lead" data-i18n="mod1_p">Finds the shortest end-winding shape that meets every requirement. Machine learning, verified in CAD.</p>
           <ul><li data-i18n="mod1_l1">Bayesian optimization of the 3D conductor</li><li data-i18n="mod1_l2">Clearance, bend radius, installation space, insertion sequence</li><li data-i18n="mod1_l3">Complete stator, basket by basket</li></ul>
-          <div class="mod-cta"><a class="btn" href="demo/index.html" data-i18n="mod1_cta">Open the app</a><a class="btn ghost" href="#story" data-i18n="cta_how">How it works</a></div>
+          <div class="mod-cta"><a class="btn" href="suite/index.html#s=1&amp;t=2" data-i18n="mod1_cta">Open the app</a><a class="btn ghost" href="#story" data-i18n="cta_how">How it works</a></div>
+        </article>
+        <article class="mod mod-n">
+          <p class="mod-num"><span data-i18n="mod_label">Module</span> 3</p>
+          <svg class="pic" viewBox="0 0 360 170" aria-hidden="true"><defs><linearGradient id="cuT" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6c9a8"/><stop offset=".45" stop-color="#d98b5f"/><stop offset="1" stop-color="#8a4a26"/></linearGradient><linearGradient id="stT" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8d939e"/><stop offset=".5" stop-color="#4b505a"/><stop offset="1" stop-color="#2a2d34"/></linearGradient><radialGradient id="glT" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#d98b5f" stop-opacity=".30"/><stop offset="1" stop-color="#d98b5f" stop-opacity="0"/></radialGradient></defs><ellipse cx="285" cy="156" rx="74" ry="9" fill="url(#glT)"/><g class="pc-grid"><circle cx="95" cy="88" r="62"/><circle cx="95" cy="88" r="30" opacity=".35"/></g><path d="M47 52 A58 58 0 0 1 143 52" class="pc-curve"/><path d="M134 44 L144 53 L131 56" class="pc-curve"/><path d="M136 120 A46 46 0 0 1 54 120" class="pc-curve" style="stroke:#d98b5f"/><path d="M63 128 L53 120 L66 115" class="pc-curve" style="stroke:#d98b5f"/><circle cx="95.0" cy="30.0" r="4" style="fill:#f0b48e;stroke:#131316;stroke-width:1.4"/><circle cx="95.0" cy="134.0" r="4" style="fill:#d98b5f;stroke:#131316;stroke-width:1.4"/><text x="80" y="93" class="pc-t2">L1 · L2</text><path d="M184 85 H206" class="pc-arrow"/><path d="M200 79 L207 85 L200 91" class="pc-arrow"/><path d="M262 150 V114 C262 98 270 90 278 78" class="pc-pin2" style="fill:none;stroke:#6b4330;stroke-width:8;opacity:.6"/><path d="M308 150 V114 C308 98 300 90 292 78" style="fill:none;stroke:#6b4330;stroke-width:8;opacity:.6"/><rect x="224" y="140" width="122" height="16" rx="3" fill="url(#stT)" stroke="#6c727d" stroke-width="1"/><path d="M246 150 V114 C246 96 260 88 275 68 L279 40" fill="none" stroke="#5a2f17" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><path d="M246 150 V114 C246 96 260 88 275 68 L279 40" fill="none" stroke="url(#cuT)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><path d="M246 150 V114 C246 96 260 88 275 68 L279 40" class="pc-p2"/><path d="M324 150 V114 C324 96 308 88 293 68 L289 40" fill="none" stroke="#5a2f17" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><path d="M324 150 V114 C324 96 308 88 293 68 L289 40" fill="none" stroke="url(#cuT)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><path d="M324 150 V114 C324 96 308 88 293 68 L289 40" class="pc-p2"/><circle cx="284" cy="38" r="10" class="pc-opt"/><circle cx="284" cy="38" r="3.6" class="pc-optc"/></svg>
+          <h3 data-i18n="mod_twist_h"></h3>
+          <p class="mod-lead" data-i18n="mod_twist_p"></p>
+          <ul><li data-i18n="mod_twist_l1"></li><li data-i18n="mod_twist_l2"></li><li data-i18n="mod_twist_l3"></li></ul>
+          <div class="mod-cta"><a class="btn" href="suite/index.html#s=2" data-i18n="cta_suite_view">Open in the suite preview</a><a class="btn ghost" href="#twist" data-i18n="cta_how">How it works</a></div>
+        </article>
+        <article class="mod mod-n">
+          <p class="mod-num"><span data-i18n="mod_label">Module</span> 4</p>
+          <svg class="pic" viewBox="0 0 360 170" aria-hidden="true"><defs><linearGradient id="cuB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6c9a8"/><stop offset=".45" stop-color="#d98b5f"/><stop offset="1" stop-color="#8a4a26"/></linearGradient><linearGradient id="stB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8d939e"/><stop offset=".5" stop-color="#4b505a"/><stop offset="1" stop-color="#2a2d34"/></linearGradient><radialGradient id="glB" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#d98b5f" stop-opacity=".30"/><stop offset="1" stop-color="#d98b5f" stop-opacity="0"/></radialGradient></defs><ellipse cx="290" cy="156" rx="76" ry="9" fill="url(#glB)"/><g class="pc-grid"><path d="M17 142 A78 78 0 0 1 173 142"/><path d="M57 142 A38 38 0 0 1 133 142" opacity=".35"/></g><circle cx="49.9" cy="125.6" r="2.4" style="fill:#8e9096;stroke:#131316;stroke-width:1.4"/><circle cx="58.2" cy="111.1" r="2.4" style="fill:#8e9096;stroke:#131316;stroke-width:1.4"/><circle cx="71.0" cy="100.4" r="2.4" style="fill:#8e9096;stroke:#131316;stroke-width:1.4"/><circle cx="86.7" cy="94.7" r="2.4" style="fill:#8e9096;stroke:#131316;stroke-width:1.4"/><circle cx="103.3" cy="94.7" r="2.4" style="fill:#8e9096;stroke:#131316;stroke-width:1.4"/><circle cx="119.0" cy="100.4" r="2.4" style="fill:#8e9096;stroke:#131316;stroke-width:1.4"/><circle cx="131.8" cy="111.1" r="2.4" style="fill:#8e9096;stroke:#131316;stroke-width:1.4"/><circle cx="140.1" cy="125.6" r="2.4" style="fill:#8e9096;stroke:#131316;stroke-width:1.4"/><circle cx="34.9" cy="120.1" r="2.4" style="fill:#8e9096;stroke:#131316;stroke-width:1.4"/><circle cx="46.0" cy="100.9" r="2.4" style="fill:#8e9096;stroke:#131316;stroke-width:1.4"/><circle cx="63.0" cy="86.6" r="2.4" style="fill:#8e9096;stroke:#131316;stroke-width:1.4"/><circle cx="83.9" cy="79.0" r="2.4" style="fill:#8e9096;stroke:#131316;stroke-width:1.4"/><circle cx="106.1" cy="79.0" r="2.4" style="fill:#8e9096;stroke:#131316;stroke-width:1.4"/><circle cx="127.0" cy="86.6" r="2.4" style="fill:#8e9096;stroke:#131316;stroke-width:1.4"/><circle cx="144.0" cy="100.9" r="2.4" style="fill:#8e9096;stroke:#131316;stroke-width:1.4"/><circle cx="155.1" cy="120.1" r="2.4" style="fill:#8e9096;stroke:#131316;stroke-width:1.4"/><path d="M34.9 120.1 A72 72 0 0 1 95.0 70" style="fill:none;stroke:#2a78d6;stroke-width:5;stroke-linecap:round"/><path d="M103.0 86 A56 56 0 0 1 131.8 111.1" style="fill:none;stroke:#eb6834;stroke-width:5;stroke-linecap:round"/><path d="M30 112 A72 72 0 0 1 60 76" style="fill:none;stroke:#1baf7a;stroke-width:5;stroke-linecap:round;opacity:.9"/><path d="M184 85 H206" class="pc-arrow"/><path d="M200 79 L207 85 L200 91" class="pc-arrow"/><rect x="224" y="148" width="124" height="10" rx="3" fill="url(#stB)" stroke="#6c727d" stroke-width="1"/><path d="M238 150 V118" fill="none" stroke="#5a2f17" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M238 150 V118" fill="none" stroke="url(#cuB)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M238 150 V118" class="pc-p2"/><path d="M260 150 V102" fill="none" stroke="#5a2f17" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M260 150 V102" fill="none" stroke="url(#cuB)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M260 150 V102" class="pc-p2"/><path d="M282 150 V86" fill="none" stroke="#5a2f17" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M282 150 V86" fill="none" stroke="url(#cuB)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M282 150 V86" class="pc-p2"/><path d="M304 150 V118" fill="none" stroke="#5a2f17" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M304 150 V118" fill="none" stroke="url(#cuB)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M304 150 V118" class="pc-p2"/><path d="M326 150 V102" fill="none" stroke="#5a2f17" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M326 150 V102" fill="none" stroke="url(#cuB)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M326 150 V102" class="pc-p2"/><rect x="232" y="118" width="78" height="9" rx="2" fill="url(#cuB)" stroke="#5a2f17" stroke-width="1.6"/><path d="M235 120 H307" stroke="#fbe0c8" stroke-width="1.4" opacity=".8"/><rect x="232" y="118" width="5" height="9" rx="1.5" fill="#2a78d6"/><rect x="254" y="102" width="78" height="9" rx="2" fill="url(#cuB)" stroke="#5a2f17" stroke-width="1.6"/><path d="M257 104 H329" stroke="#fbe0c8" stroke-width="1.4" opacity=".8"/><rect x="254" y="102" width="5" height="9" rx="1.5" fill="#eb6834"/><rect x="276" y="86" width="70" height="9" rx="2" fill="url(#cuB)" stroke="#5a2f17" stroke-width="1.6"/><path d="M279 88 H343" stroke="#fbe0c8" stroke-width="1.4" opacity=".8"/><rect x="276" y="86" width="5" height="9" rx="1.5" fill="#1baf7a"/><rect x="334" y="62" width="22" height="18" rx="3" fill="url(#stB)" stroke="#9aa0ab" stroke-width="1"/><path d="M342 80 V86" style="stroke:#d98b5f;stroke-width:5"/></svg>
+          <h3 data-i18n="mod_busbar_h"></h3>
+          <p class="mod-lead" data-i18n="mod_busbar_p"></p>
+          <ul><li data-i18n="mod_busbar_l1"></li><li data-i18n="mod_busbar_l2"></li><li data-i18n="mod_busbar_l3"></li></ul>
+          <div class="mod-cta"><a class="btn" href="suite/index.html#s=4" data-i18n="cta_suite_view">Open in the suite preview</a><a class="btn ghost" href="#busbar" data-i18n="cta_how">How it works</a></div>
         </article>
         <article class="mod mod-b">
-          <p class="mod-num"><span data-i18n="mod_label">Module</span> 2</p>
+          <p class="mod-num"><span data-i18n="mod_label">Module</span> 5</p>
           <svg class="pic" viewBox="0 0 360 170" aria-hidden="true">
 <defs>
 <linearGradient id="stG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8d939e"/><stop offset=".5" stop-color="#4b505a"/><stop offset="1" stop-color="#2a2d34"/></linearGradient>
@@ -129,16 +133,176 @@
           <h3 data-i18n="mod2_h">Manufacturing</h3>
           <p class="mod-lead" data-i18n="mod2_p">Turns the optimized pin into a bend program and shows what the wire goes through, including springback.</p>
           <ul><li data-i18n="mod2_l1">Bend program from the 3D centreline: feed, twist, plane, bend</li><li data-i18n="mod2_l2">Stress-strain curve and springback, live with the material</li><li data-i18n="mod2_l3">0.9 to 1.2 mm from the target curve with 20 bends</li></ul>
-          <div class="mod-cta"><a class="btn" href="fertigung/index.html" data-i18n="mod2_cta">Open the app</a><a class="btn ghost" href="#mfg" data-i18n="cta_how">How it works</a></div>
+          <div class="mod-cta"><a class="btn" href="suite/index.html#s=5&amp;t=2" data-i18n="mod2_cta">Open the app</a><a class="btn ghost" href="#mfg" data-i18n="cta_how">How it works</a></div>
         </article>
       </div>
       <p class="mod-note" data-i18n="mod_note">Both modules use the same pin. Material and machine values in the manufacturing module are assumptions, not measured machine data.</p>
     </section>
+    <section class="shots">
+      <h2 class="reveal" data-i18n="sus_h"></h2>
+      <div class="shot-item reveal">
+        <figure class="tilt" data-tilt="-1"><img data-img="sp_m_stator_meaning" alt="" width="1600" height="841" loading="lazy"></figure>
+        <div class="shot-copy"><p class="num">01</p><h3 data-i18n="sus1_h"></h3><p data-i18n="sus1_p"></p></div>
+      </div>
+      <div class="shot-item rev reveal">
+        <figure class="tilt" data-tilt="1"><img data-img="sp_m_seq" alt="" width="1600" height="841" loading="lazy"></figure>
+        <div class="shot-copy"><p class="num">02</p><h3 data-i18n="sus2_h"></h3><p data-i18n="sus2_p"></p></div>
+      </div>
+      <div class="shot-item reveal">
+        <figure class="tilt" data-tilt="-1"><img data-img="sp_b_all" alt="" width="1600" height="841" loading="lazy"></figure>
+        <div class="shot-copy"><p class="num">03</p><h3 data-i18n="sus3_h"></h3><p data-i18n="sus3_p"></p></div>
+      </div>
+    </section>
+    <section class="demo reveal">
+      <div class="demo-copy">
+        <h2 data-i18n="su_dh"></h2>
+        <p data-i18n="su_dp"></p>
+        <a class="btn" href="suite/index.html#s=0" target="_blank" rel="noopener" data-i18n="embed_full">Full screen</a>
+      </div>
+      <figure class="tilt big" data-tilt="1"><img data-img="sp_m_stator" alt="" width="1600" height="841" loading="lazy"></figure>
+    </section>
+    <!-- 7 · Ausblick -->
+    <section class="outlook reveal" id="outlook">
+      <p class="eyebrow" data-i18n="o_tag"></p>
+      <h2 data-i18n="o_h"></h2>
+      <p class="lead" data-i18n="o_p"></p>
+      <div class="o-cards">
+        <article class="o-card">
+          <svg viewBox="0 0 160 90" aria-hidden="true"><path class="o-a" d="M30 84 V44 L52 12"/><path class="o-a" d="M70 84 V44 L48 12"/><path class="o-b" d="M100 84 V44 L122 12"/><path class="o-b" d="M140 84 V44 L118 12"/><path class="o-w" d="M122 12 l-4 0"/></svg>
+          <h3 data-i18n="o1_h"></h3><p data-i18n="o1_p"></p>
+        </article>
+        <article class="o-card">
+          <svg viewBox="0 0 160 90" aria-hidden="true"><ellipse class="o-a" cx="80" cy="48" rx="56" ry="26"/><ellipse class="o-b" cx="80" cy="48" rx="40" ry="18"/><path class="o-a" d="M24 48 v-20 M136 48 v-20"/><path class="o-b" d="M80 30 v-18"/></svg>
+          <h3 data-i18n="o2_h"></h3><p data-i18n="o2_p"></p>
+        </article>
+        <article class="o-card">
+          <svg viewBox="0 0 160 90" aria-hidden="true"><path class="o-a" d="M24 84 V10"/><path class="o-b" d="M62 84 V30 Q62 10 82 10 H100 Q120 10 120 30 V84"/><path class="o-a" d="M140 84 V34 L128 50"/></svg>
+          <h3 data-i18n="o3_h"></h3><p data-i18n="o3_p"></p>
+        </article>
+      </div>
+    </section>
+  </div>
+  <div class="tabpanel" id="p-winding" data-tab="winding" role="tabpanel" aria-labelledby="t-winding" hidden>
+    <section class="chapter split reveal" id="winding-scheme">
+      <div class="chap-copy">
+        <p class="chap-k"><span data-i18n="mod_label">Module</span> 1</p>
+        <h2 data-i18n="cw_h"></h2>
+        <p class="lead" data-i18n="cw_p"></p>
+      </div>
+      <div class="chap-ill"><svg class="ill" viewBox="0 0 300 110" role="img" aria-hidden="true"><path d="M40 92 V52 Q40 26 63 22 Q86 26 86 52 V92" fill="none" stroke="#d98b5f" stroke-width="7" stroke-linecap="round"/><path d="M86 92 V52 Q86 26 109 22 Q132 26 132 52 V92" fill="none" stroke="#d98b5f" stroke-width="7" stroke-linecap="round"/><path d="M132 92 V52 Q132 26 155 22 Q178 26 178 52 V92" fill="none" stroke="#d98b5f" stroke-width="7" stroke-linecap="round"/><path d="M178 92 V52 Q178 26 201 22 Q224 26 224 52 V92" fill="none" stroke="#d98b5f" stroke-width="7" stroke-linecap="round"/><path d="M224 92 V52 Q224 26 247 22 Q270 26 270 52 V92" fill="none" stroke="#d98b5f" stroke-width="7" stroke-linecap="round"/><path d="M30 96 H270" stroke="rgba(255,255,255,.12)"/><text x="150.0" y="108.0" font-size="11" text-anchor="middle" fill="#f0b48e" font-weight="400">y = 9</text></svg></div>
+    </section>
+    <section class="mfg-method reveal approach">
+      <p class="eyebrow" data-i18n="aw_k">Approach</p>
+      <h2 data-i18n="aw_h"></h2>
+      <div class="mm-grid">
+        <article class="mm"><div class="mm-ill"><svg class="ill" viewBox="0 0 300 110" role="img" aria-hidden="true"><path d="M40 92 V52 Q40 26 63 22 Q86 26 86 52 V92" fill="none" stroke="#d98b5f" stroke-width="7" stroke-linecap="round"/><path d="M86 92 V52 Q86 26 109 22 Q132 26 132 52 V92" fill="none" stroke="#d98b5f" stroke-width="7" stroke-linecap="round"/><path d="M132 92 V52 Q132 26 155 22 Q178 26 178 52 V92" fill="none" stroke="#d98b5f" stroke-width="7" stroke-linecap="round"/><path d="M178 92 V52 Q178 26 201 22 Q224 26 224 52 V92" fill="none" stroke="#d98b5f" stroke-width="7" stroke-linecap="round"/><path d="M224 92 V52 Q224 26 247 22 Q270 26 270 52 V92" fill="none" stroke="#d98b5f" stroke-width="7" stroke-linecap="round"/><path d="M30 96 H270" stroke="rgba(255,255,255,.12)"/><text x="150.0" y="108.0" font-size="11" text-anchor="middle" fill="#f0b48e" font-weight="400">y = 9</text></svg></div><p class="mm-n">1</p><h3 data-i18n="aw1_h"></h3><p data-i18n="aw1_p"></p><p class="mm-f" data-i18n="aw1_f"></p></article>
+        <article class="mm"><div class="mm-ill"><svg class="ill" viewBox="0 0 300 110" role="img" aria-hidden="true"><path d="M30 80 H270" stroke="rgba(255,255,255,.12)"/><circle cx="40" cy="80" r="5" fill="#2a78d6"/><circle cx="62" cy="80" r="5" fill="#2a78d6"/><circle cx="84" cy="80" r="5" fill="#2a78d6"/><circle cx="106" cy="80" r="5" fill="#1baf7a"/><circle cx="128" cy="80" r="5" fill="#1baf7a"/><circle cx="150" cy="80" r="5" fill="#1baf7a"/><circle cx="172" cy="80" r="5" fill="#eb6834"/><circle cx="194" cy="80" r="5" fill="#eb6834"/><circle cx="216" cy="80" r="5" fill="#eb6834"/><circle cx="238" cy="80" r="5" fill="#2a78d6"/><circle cx="260" cy="80" r="5" fill="#2a78d6"/><path d="M40 74 C80 10 160 10 194 74" fill="none" stroke="#f0b48e" stroke-width="2.4"/><path d="M62 74 C100 30 180 30 216 74" fill="none" stroke="#eb6834" stroke-width="2.4" stroke-dasharray="6 4"/><text x="150.0" y="104.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400" data-i18n="pl_rule"></text></svg></div><p class="mm-n">2</p><h3 data-i18n="aw2_h"></h3><p data-i18n="aw2_p"></p><p class="mm-f" data-i18n="aw2_f"></p></article>
+        <article class="mm"><div class="mm-ill"><svg class="ill" viewBox="0 0 300 110" role="img" aria-hidden="true"><circle cx="80" cy="56" r="40" fill="none" stroke="rgba(255,255,255,.12)"/><path d="M80 56 l-13.0 -35.7" stroke="#2a78d6" stroke-width="2.4"/><path d="M80 56 l0.0 -38.0" stroke="#2a78d6" stroke-width="2.4"/><path d="M80 56 l13.0 -35.7" stroke="#2a78d6" stroke-width="2.4"/><path d="M80 56 V18" stroke="#ececee" stroke-width="3"/><path d="M150 56 H270" stroke="rgba(255,255,255,.12)"/><rect x="160" y="44.0" width="9" height="12.0" rx="2" fill="#d98b5f"/><rect x="174" y="31.4" width="9" height="24.6" rx="2" fill="#d98b5f"/><rect x="188" y="36.8" width="9" height="19.2" rx="2" fill="#d98b5f"/><rect x="202" y="42.2" width="9" height="13.8" rx="2" fill="#d98b5f"/><rect x="216" y="29.6" width="9" height="26.4" rx="2" fill="#d98b5f"/><rect x="230" y="35.0" width="9" height="21.0" rx="2" fill="#d98b5f"/><rect x="244" y="40.4" width="9" height="15.6" rx="2" fill="#d98b5f"/><rect x="258" y="27.8" width="9" height="28.2" rx="2" fill="#d98b5f"/><text x="215.0" y="76.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">U_nb</text></svg></div><p class="mm-n">3</p><h3 data-i18n="aw3_h"></h3><p data-i18n="aw3_p"></p><p class="mm-f" data-i18n="aw3_f"></p></article>
+      </div>
+    </section>
+    <section class="mstory">
+      <div class="story-text">
+        <article class="mstep">
+          <p class="num">01</p>
+          <h2 data-i18n="wst_s1_h"></h2>
+          <p data-i18n="wst_s1_p"></p>
+          <div class="mstep-fig"><svg class="plot stageplot" viewBox="0 0 300 200" role="img" aria-hidden="true"><path d="M150 100 L150.0 22.0" stroke="#2a78d6" stroke-width="3" stroke-dasharray="" stroke-linecap="round"/><path d="M150 100 L176.7 26.7" stroke="#2a78d6" stroke-width="3" stroke-dasharray="" stroke-linecap="round"/><path d="M150 100 L200.1 40.2" stroke="#2a78d6" stroke-width="3" stroke-dasharray="" stroke-linecap="round"/><path d="M150 100 L217.5 61.0" stroke="#1baf7a" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/><path d="M150 100 L226.8 86.5" stroke="#1baf7a" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/><path d="M150 100 L226.8 113.5" stroke="#1baf7a" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/><path d="M150 100 L217.5 139.0" stroke="#eb6834" stroke-width="3" stroke-dasharray="" stroke-linecap="round"/><path d="M150 100 L200.1 159.8" stroke="#eb6834" stroke-width="3" stroke-dasharray="" stroke-linecap="round"/><path d="M150 100 L176.7 173.3" stroke="#eb6834" stroke-width="3" stroke-dasharray="" stroke-linecap="round"/><path d="M150 100 L150.0 178.0" stroke="#2a78d6" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/><path d="M150 100 L123.3 173.3" stroke="#2a78d6" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/><path d="M150 100 L99.9 159.8" stroke="#2a78d6" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/><path d="M150 100 L82.5 139.0" stroke="#1baf7a" stroke-width="3" stroke-dasharray="" stroke-linecap="round"/><path d="M150 100 L73.2 113.5" stroke="#1baf7a" stroke-width="3" stroke-dasharray="" stroke-linecap="round"/><path d="M150 100 L73.2 86.5" stroke="#1baf7a" stroke-width="3" stroke-dasharray="" stroke-linecap="round"/><path d="M150 100 L82.5 61.0" stroke="#eb6834" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/><path d="M150 100 L99.9 40.2" stroke="#eb6834" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/><path d="M150 100 L123.3 26.7" stroke="#eb6834" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/><circle cx="150" cy="100" r="5" fill="#ececee"/><text x="150.0" y="194.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400" data-i18n="pl_star">20° el. · 36 Nuten · p = 2</text></svg></div>
+        </article>
+        <article class="mstep">
+          <p class="num">02</p>
+          <h2 data-i18n="wst_s2_h"></h2>
+          <p data-i18n="wst_s2_p"></p>
+          <div class="mstep-fig"><svg class="ill stageplot" viewBox="0 0 300 110" role="img" aria-hidden="true"><path d="M18 100 V62 Q18 40 31 34 Q44 40 44 62 V100" fill="none" stroke="#f0b48e" stroke-width="5" stroke-linecap="round"/><path d="M44 100 V62 Q44 40 57 34 Q70 40 70 62 V100" fill="none" stroke="#d98b5f" stroke-width="5" stroke-linecap="round"/><path d="M70 100 V62 Q70 40 83 34 Q96 40 96 62 V100" fill="none" stroke="#d98b5f" stroke-width="5" stroke-linecap="round"/><path d="M96 100 V62 Q96 40 109 34 Q122 40 122 62 V100" fill="none" stroke="#d98b5f" stroke-width="5" stroke-linecap="round"/><path d="M122 100 V62 Q122 40 135 34 Q148 40 148 62 V100" fill="none" stroke="#f0b48e" stroke-width="5" stroke-linecap="round"/><path d="M148 100 V62 Q148 40 161 34 Q174 40 174 62 V100" fill="none" stroke="#d98b5f" stroke-width="5" stroke-linecap="round"/><path d="M174 100 V62 Q174 40 187 34 Q200 40 200 62 V100" fill="none" stroke="#d98b5f" stroke-width="5" stroke-linecap="round"/><path d="M200 100 V62 Q200 40 213 34 Q226 40 226 62 V100" fill="none" stroke="#d98b5f" stroke-width="5" stroke-linecap="round"/><path d="M226 100 V62 Q226 40 239 34 Q252 40 252 62 V100" fill="none" stroke="#f0b48e" stroke-width="5" stroke-linecap="round"/><path d="M252 100 V62 Q252 40 265 34 Q278 40 278 62 V100" fill="none" stroke="#d98b5f" stroke-width="5" stroke-linecap="round"/><path d="M278 100 V62 Q278 40 291 34 Q304 40 304 62 V100" fill="none" stroke="#d98b5f" stroke-width="5" stroke-linecap="round"/><text x="150.0" y="18.0" font-size="10" text-anchor="middle" fill="#f0b48e" font-weight="400" data-i18n="pl_crowns"></text></svg></div>
+        </article>
+        <article class="mstep">
+          <p class="num">03</p>
+          <h2 data-i18n="wst_s3_h"></h2>
+          <p data-i18n="wst_s3_p"></p>
+          <div class="mstep-fig"><svg class="plot stageplot" viewBox="0 0 360 130" role="img" aria-hidden="true"><rect x="10.0" y="18" width="163.4" height="34" rx="4" fill="#d98b5f"/><text x="92.7" y="40.0" font-size="13" text-anchor="middle" fill="#0e0e10" font-weight="600">54</text><rect x="175.4" y="18" width="108.3" height="34" rx="4" fill="#f0b48e"/><text x="230.5" y="40.0" font-size="13" text-anchor="middle" fill="#0e0e10" font-weight="600">36</text><rect x="285.7" y="18" width="43.9" height="34" rx="4" fill="#eb6834"/><text x="308.6" y="40.0" font-size="13" text-anchor="middle" fill="#0e0e10" font-weight="600">15</text><rect x="331.6" y="18" width="16.4" height="34" rx="4" fill="#1baf7a"/><text x="340.8" y="40.0" font-size="13" text-anchor="middle" fill="#0e0e10" font-weight="600">6</text><rect x="10" y="67" width="10" height="10" rx="2" fill="#d98b5f"/><text x="26.0" y="76.0" font-size="11" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_c1"></text><rect x="185" y="67" width="10" height="10" rx="2" fill="#f0b48e"/><text x="201.0" y="76.0" font-size="11" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_c2"></text><rect x="10" y="89" width="10" height="10" rx="2" fill="#eb6834"/><text x="26.0" y="98.0" font-size="11" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_c3"></text><rect x="185" y="89" width="10" height="10" rx="2" fill="#1baf7a"/><text x="201.0" y="98.0" font-size="11" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_c4"></text></svg></div>
+        </article>
+        <article class="mstep">
+          <p class="num">04</p>
+          <h2 data-i18n="wst_s4_h"></h2>
+          <p data-i18n="wst_s4_p"></p>
+          <div class="mstep-fig"><svg class="ill stageplot" viewBox="0 0 300 110" role="img" aria-hidden="true"><rect x="10" y="38" width="80" height="34" rx="6" fill="none" stroke="#d98b5f" stroke-width="2"/><text x="50.0" y="59.0" font-size="10" text-anchor="middle" fill="#f0b48e" font-weight="400" data-i18n="pl_fl_proj"></text><path d="M92 55 L150 14" stroke="rgba(255,255,255,.12)" stroke-width="1.4"/><rect x="152" y="4" width="130" height="20" rx="5" fill="none" stroke="#d98b5f" stroke-width="1.6"/><text x="217.0" y="18.0" font-size="9.5" text-anchor="middle" fill="#8e9096" font-weight="400" data-i18n="pl_fl_form"></text><path d="M92 55 L150 41" stroke="rgba(255,255,255,.12)" stroke-width="1.4"/><rect x="152" y="31" width="130" height="20" rx="5" fill="none" stroke="#2a78d6" stroke-width="1.6"/><text x="217.0" y="45.0" font-size="9.5" text-anchor="middle" fill="#8e9096" font-weight="400" data-i18n="pl_fl_twist"></text><path d="M92 55 L150 68" stroke="rgba(255,255,255,.12)" stroke-width="1.4"/><rect x="152" y="58" width="130" height="20" rx="5" fill="none" stroke="#eb6834" stroke-width="1.6"/><text x="217.0" y="72.0" font-size="9.5" text-anchor="middle" fill="#8e9096" font-weight="400" data-i18n="pl_fl_bus"></text><path d="M92 55 L150 95" stroke="rgba(255,255,255,.12)" stroke-width="1.4"/><rect x="152" y="85" width="130" height="20" rx="5" fill="none" stroke="#1baf7a" stroke-width="1.6"/><text x="217.0" y="99.0" font-size="9.5" text-anchor="middle" fill="#8e9096" font-weight="400" data-i18n="pl_fl_mfg"></text></svg></div>
+        </article>
+      </div>
+      <div class="story-visual">
+        <div class="stage">
+          <div class="layer mlayer on"><svg class="plot stageplot" viewBox="0 0 300 200" role="img" aria-hidden="true"><path d="M150 100 L150.0 22.0" stroke="#2a78d6" stroke-width="3" stroke-dasharray="" stroke-linecap="round"/><path d="M150 100 L176.7 26.7" stroke="#2a78d6" stroke-width="3" stroke-dasharray="" stroke-linecap="round"/><path d="M150 100 L200.1 40.2" stroke="#2a78d6" stroke-width="3" stroke-dasharray="" stroke-linecap="round"/><path d="M150 100 L217.5 61.0" stroke="#1baf7a" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/><path d="M150 100 L226.8 86.5" stroke="#1baf7a" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/><path d="M150 100 L226.8 113.5" stroke="#1baf7a" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/><path d="M150 100 L217.5 139.0" stroke="#eb6834" stroke-width="3" stroke-dasharray="" stroke-linecap="round"/><path d="M150 100 L200.1 159.8" stroke="#eb6834" stroke-width="3" stroke-dasharray="" stroke-linecap="round"/><path d="M150 100 L176.7 173.3" stroke="#eb6834" stroke-width="3" stroke-dasharray="" stroke-linecap="round"/><path d="M150 100 L150.0 178.0" stroke="#2a78d6" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/><path d="M150 100 L123.3 173.3" stroke="#2a78d6" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/><path d="M150 100 L99.9 159.8" stroke="#2a78d6" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/><path d="M150 100 L82.5 139.0" stroke="#1baf7a" stroke-width="3" stroke-dasharray="" stroke-linecap="round"/><path d="M150 100 L73.2 113.5" stroke="#1baf7a" stroke-width="3" stroke-dasharray="" stroke-linecap="round"/><path d="M150 100 L73.2 86.5" stroke="#1baf7a" stroke-width="3" stroke-dasharray="" stroke-linecap="round"/><path d="M150 100 L82.5 61.0" stroke="#eb6834" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/><path d="M150 100 L99.9 40.2" stroke="#eb6834" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/><path d="M150 100 L123.3 26.7" stroke="#eb6834" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/><circle cx="150" cy="100" r="5" fill="#ececee"/><text x="150.0" y="194.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400" data-i18n="pl_star">20° el. · 36 Nuten · p = 2</text></svg></div>
+          <div class="layer mlayer"><svg class="ill stageplot" viewBox="0 0 300 110" role="img" aria-hidden="true"><path d="M18 100 V62 Q18 40 31 34 Q44 40 44 62 V100" fill="none" stroke="#f0b48e" stroke-width="5" stroke-linecap="round"/><path d="M44 100 V62 Q44 40 57 34 Q70 40 70 62 V100" fill="none" stroke="#d98b5f" stroke-width="5" stroke-linecap="round"/><path d="M70 100 V62 Q70 40 83 34 Q96 40 96 62 V100" fill="none" stroke="#d98b5f" stroke-width="5" stroke-linecap="round"/><path d="M96 100 V62 Q96 40 109 34 Q122 40 122 62 V100" fill="none" stroke="#d98b5f" stroke-width="5" stroke-linecap="round"/><path d="M122 100 V62 Q122 40 135 34 Q148 40 148 62 V100" fill="none" stroke="#f0b48e" stroke-width="5" stroke-linecap="round"/><path d="M148 100 V62 Q148 40 161 34 Q174 40 174 62 V100" fill="none" stroke="#d98b5f" stroke-width="5" stroke-linecap="round"/><path d="M174 100 V62 Q174 40 187 34 Q200 40 200 62 V100" fill="none" stroke="#d98b5f" stroke-width="5" stroke-linecap="round"/><path d="M200 100 V62 Q200 40 213 34 Q226 40 226 62 V100" fill="none" stroke="#d98b5f" stroke-width="5" stroke-linecap="round"/><path d="M226 100 V62 Q226 40 239 34 Q252 40 252 62 V100" fill="none" stroke="#f0b48e" stroke-width="5" stroke-linecap="round"/><path d="M252 100 V62 Q252 40 265 34 Q278 40 278 62 V100" fill="none" stroke="#d98b5f" stroke-width="5" stroke-linecap="round"/><path d="M278 100 V62 Q278 40 291 34 Q304 40 304 62 V100" fill="none" stroke="#d98b5f" stroke-width="5" stroke-linecap="round"/><text x="150.0" y="18.0" font-size="10" text-anchor="middle" fill="#f0b48e" font-weight="400" data-i18n="pl_crowns"></text></svg></div>
+          <div class="layer mlayer"><svg class="plot stageplot" viewBox="0 0 360 130" role="img" aria-hidden="true"><rect x="10.0" y="18" width="163.4" height="34" rx="4" fill="#d98b5f"/><text x="92.7" y="40.0" font-size="13" text-anchor="middle" fill="#0e0e10" font-weight="600">54</text><rect x="175.4" y="18" width="108.3" height="34" rx="4" fill="#f0b48e"/><text x="230.5" y="40.0" font-size="13" text-anchor="middle" fill="#0e0e10" font-weight="600">36</text><rect x="285.7" y="18" width="43.9" height="34" rx="4" fill="#eb6834"/><text x="308.6" y="40.0" font-size="13" text-anchor="middle" fill="#0e0e10" font-weight="600">15</text><rect x="331.6" y="18" width="16.4" height="34" rx="4" fill="#1baf7a"/><text x="340.8" y="40.0" font-size="13" text-anchor="middle" fill="#0e0e10" font-weight="600">6</text><rect x="10" y="67" width="10" height="10" rx="2" fill="#d98b5f"/><text x="26.0" y="76.0" font-size="11" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_c1"></text><rect x="185" y="67" width="10" height="10" rx="2" fill="#f0b48e"/><text x="201.0" y="76.0" font-size="11" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_c2"></text><rect x="10" y="89" width="10" height="10" rx="2" fill="#eb6834"/><text x="26.0" y="98.0" font-size="11" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_c3"></text><rect x="185" y="89" width="10" height="10" rx="2" fill="#1baf7a"/><text x="201.0" y="98.0" font-size="11" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_c4"></text></svg></div>
+          <div class="layer mlayer"><svg class="ill stageplot" viewBox="0 0 300 110" role="img" aria-hidden="true"><rect x="10" y="38" width="80" height="34" rx="6" fill="none" stroke="#d98b5f" stroke-width="2"/><text x="50.0" y="59.0" font-size="10" text-anchor="middle" fill="#f0b48e" font-weight="400" data-i18n="pl_fl_proj"></text><path d="M92 55 L150 14" stroke="rgba(255,255,255,.12)" stroke-width="1.4"/><rect x="152" y="4" width="130" height="20" rx="5" fill="none" stroke="#d98b5f" stroke-width="1.6"/><text x="217.0" y="18.0" font-size="9.5" text-anchor="middle" fill="#8e9096" font-weight="400" data-i18n="pl_fl_form"></text><path d="M92 55 L150 41" stroke="rgba(255,255,255,.12)" stroke-width="1.4"/><rect x="152" y="31" width="130" height="20" rx="5" fill="none" stroke="#2a78d6" stroke-width="1.6"/><text x="217.0" y="45.0" font-size="9.5" text-anchor="middle" fill="#8e9096" font-weight="400" data-i18n="pl_fl_twist"></text><path d="M92 55 L150 68" stroke="rgba(255,255,255,.12)" stroke-width="1.4"/><rect x="152" y="58" width="130" height="20" rx="5" fill="none" stroke="#eb6834" stroke-width="1.6"/><text x="217.0" y="72.0" font-size="9.5" text-anchor="middle" fill="#8e9096" font-weight="400" data-i18n="pl_fl_bus"></text><path d="M92 55 L150 95" stroke="rgba(255,255,255,.12)" stroke-width="1.4"/><rect x="152" y="85" width="130" height="20" rx="5" fill="none" stroke="#1baf7a" stroke-width="1.6"/><text x="217.0" y="99.0" font-size="9.5" text-anchor="middle" fill="#8e9096" font-weight="400" data-i18n="pl_fl_mfg"></text></svg></div>
+        </div>
+      </div>
+    </section>
+    <section class="results">
+      <h2 class="reveal" data-i18n="r_h"></h2>
+      <div class="r-grid">
+        <article class="rc c4 reveal"><p class="rc-k" data-i18n="wq1_k"></p><p class="rc-big"><b data-count="0.9598" data-dec="4">0.9598</b></p><div class="hbars wide"><div class="hb" style="--c:#d98b5f;--w:0.9598;--i:0"><span data-i18n="pl_kd"></span><u><i></i></u><b data-v="0.9598" data-d="4" data-u="">0.9598</b></div><div class="hb" style="--c:#f0b48e;--w:1.0000;--i:1"><span data-i18n="pl_kp"></span><u><i></i></u><b data-v="1.0" data-d="4" data-u="">1.0000</b></div></div><p class="rc-note" data-i18n="wq1_n"></p></article>
+        <article class="rc c4 reveal"><p class="rc-k" data-i18n="wq2_k"></p><p class="rc-big"><b data-count="216" data-dec="0">216</b><em data-i18n="pl_legs"></em></p><div class="hbars wide"><div class="hb" style="--c:#d98b5f;--w:1.0000;--i:0"><span data-i18n="pl_c1"></span><u><i></i></u><b data-v="54" data-d="0" data-u="">54</b></div><div class="hb" style="--c:#f0b48e;--w:0.6667;--i:1"><span data-i18n="pl_c2"></span><u><i></i></u><b data-v="36" data-d="0" data-u="">36</b></div><div class="hb" style="--c:#eb6834;--w:0.2778;--i:2"><span data-i18n="pl_c3"></span><u><i></i></u><b data-v="15" data-d="0" data-u="">15</b></div><div class="hb" style="--c:#1baf7a;--w:0.1111;--i:3"><span data-i18n="pl_c4"></span><u><i></i></u><b data-v="6" data-d="0" data-u="">6</b></div></div><p class="rc-note" data-i18n="wq2_n"></p></article>
+        <article class="rc c4 reveal"><p class="rc-k" data-i18n="wq3_k"></p><p class="rc-big"><b data-count="8" data-dec="0">8</b><em>/ 8</em></p><div class="dotrows"><div><span></span><p><i class="f" style="--c:#4fd1a0;--d:0ms"></i><i class="f" style="--c:#4fd1a0;--d:60ms"></i><i class="f" style="--c:#4fd1a0;--d:120ms"></i><i class="f" style="--c:#4fd1a0;--d:180ms"></i><i class="f" style="--c:#4fd1a0;--d:240ms"></i><i class="f" style="--c:#4fd1a0;--d:300ms"></i><i class="f" style="--c:#4fd1a0;--d:360ms"></i><i class="f" style="--c:#4fd1a0;--d:420ms"></i></p></div></div><p class="rc-note" data-i18n="wq3_n"></p></article>
+      </div>
+    </section>
+    <section class="shots">
+      <h2 class="reveal" data-i18n="ws_h"></h2>
+      <div class="shot-item reveal">
+        <figure class="tilt" data-tilt="-1"><img data-img="sp_w_top" alt="" width="1600" height="841" loading="lazy"></figure>
+        <div class="shot-copy"><p class="num">01</p><h3 data-i18n="ws1_h"></h3><p data-i18n="ws1_p"></p></div>
+      </div>
+      <div class="shot-item rev reveal">
+        <figure class="tilt" data-tilt="1"><img data-img="sp_w_principle" alt="" width="1600" height="841" loading="lazy"></figure>
+        <div class="shot-copy"><p class="num">02</p><h3 data-i18n="ws2_h"></h3><p data-i18n="ws2_p"></p></div>
+      </div>
+    </section>
+    <section class="demo reveal">
+      <div class="demo-copy">
+        <h2 data-i18n="cw_dh"></h2>
+        <p data-i18n="cw_dp"></p>
+        <a class="btn" href="suite/index.html#s=0" data-i18n="cta_suite_view">Open the suite preview</a>
+      </div>
+      <figure class="tilt big" data-tilt="1"><img data-img="sp_w_3d" alt="" width="1600" height="841" loading="lazy"></figure>
+    </section>
+  </div>
+  <div class="tabpanel" id="p-forming" data-tab="forming" role="tabpanel" aria-labelledby="t-forming" hidden>
+    <!-- 1 · Hero -->
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="eyebrow">Hairpin end windings</p>
+        <h1 data-i18n="h1">The shortest hairpin<br>that meets every requirement.</h1>
+        <p class="lead" data-i18n="lead">Every candidate shape is a real CAD model, measured against clearance, bend radius, build space and assembly order. The optimizer keeps the best one.</p>
+        <div class="hero-mods">
+          <article class="hm">
+            <p class="hm-k" data-i18n="hm1_k">01 · Generation</p>
+            <p class="hm-v"><b id="heroLen" data-count="174.14" data-dec="2">174.14</b><em>mm</em></p>
+            <p class="hm-s" data-i18n="hm1_s">End-winding length · best of 96 variants · meets every requirement</p>
+            <a class="btn small" href="suite/index.html#s=1&amp;t=2" data-i18n="cta_demo">Open the app</a>
+          </article>
+          <article class="hm">
+            <p class="hm-k" data-i18n="hm2_k">02 · Manufacturing</p>
+            <p class="hm-v"><b data-count="1.16" data-dec="2">1.16</b><em>mm</em></p>
+            <p class="hm-s" data-i18n="hm2_s">Largest distance from the target curve · 20 bends · springback compensated</p>
+            <a class="btn small" href="suite/index.html#s=5&amp;t=2" data-i18n="cta_demo">Open the app</a>
+          </article>
+        </div>
+      </div>
+      <div class="hero-pin">
+        <svg id="heroPin" viewBox="0 0 400 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>
+        <video id="heroVid" aria-hidden="true" muted loop playsinline preload="metadata" poster="hero_pin.jpg"><source src="hero_pin.mp4" type="video/mp4"><source src="hero_pin.webm" type="video/webm"></video>
+        <div class="pin-label" id="pinLabel" aria-hidden="true"></div>
+        <button type="button" class="vidtoggle" id="heroToggle" aria-label="Pause animation"><span aria-hidden="true">❚❚</span></button>
+      </div>
+      <a class="scrollhint" href="#story" aria-label="Scroll" data-i18n-aria="ar_scroll"><span></span></a>
+    </section>
 
+    <!-- 2 · Statement -->
+    <section class="statement reveal">
+      <p data-i18n="statement">A hairpin must keep its distance from neighbouring conductors, respect the minimum bend radius, fit the installation space and be insertable basket by basket. <em>A short conductor is only of value if all of these requirements are met at the same time.</em></p>
+    </section>
 
     <!-- Kapitel Generation -->
     <section class="chapter reveal" id="gen">
-      <p class="chap-k"><span data-i18n="mod_label">Module</span> 1</p>
+      <p class="chap-k"><span data-i18n="mod_label">Module</span> 2</p>
       <h2 data-i18n="ch1_h">Generation</h2>
       <p class="lead" data-i18n="ch1_p"></p>
     </section>
@@ -202,7 +366,7 @@
           <svg id="stageFront" viewBox="0 0 600 440" preserveAspectRatio="xMidYMid meet" class="layer"></svg>
           <div class="layer stagecut"><img id="cutImg" alt="" width="1040" height="768" loading="lazy"></div>
           <div class="tags" id="tags"></div>
-          <div class="pickbox" id="pickbox"><label for="gapReq" data-i18n="pick_l"></label><input type="range" id="gapReq" min="0" max="1000" value="300" aria-label="Minimum clearance"><output id="gapOut"></output></div>
+          <div class="pickbox" id="pickbox"><label for="gapReq" data-i18n="pick_l"></label><input type="range" id="gapReq" min="0" max="1000" value="300" aria-label="Minimum clearance" data-i18n-aria="ar_gap"><output id="gapOut"></output></div>
         </div>
       </div>
     </section>
@@ -269,22 +433,186 @@
     </section>
 
     <!-- 6 · Demo -->
-    <section class="demo reveal">
+    <section class="demo embed reveal">
       <div class="demo-copy">
         <h2 data-i18n="d_h">App preview</h2>
         <p data-i18n="d_p">The demo opens the finished runs: switch baskets, review each phase, pick other pins, cut through the stator. Computing new runs is not part of the demo.</p>
-        <a class="btn btn-2l" href="demo/index.html"><span data-i18n="cta_demo">Open the app</span><small data-i18n="desk_only"></small></a>
         <a class="btn ghost" id="contact" href="#" data-i18n="d_access">Get in touch</a>
         <p class="src"><span data-i18n="d_more">An application by Fronteer Lab</span> · fronteerlab.com</p>
+        <a class="btn" href="suite/index.html#s=1&t=2" target="_blank" rel="noopener" data-i18n="embed_full">Full screen</a>
       </div>
-      <figure class="tilt big" data-tilt="1"><img data-img="total" alt="" width="1600" height="876" loading="lazy"></figure>
+      <div class="embed-frame"><iframe data-src="suite/index.html#s=1&t=2" title="Fronteer Hairpin Suite" data-i18n-title="ar_suite" loading="lazy" allow="fullscreen"></iframe><a class="btn embed-mobile" href="suite/index.html#s=1&t=2" target="_blank" rel="noopener" data-i18n="embed_open">Open the suite preview</a></div>
     </section>
-
-
+  </div>
+  <div class="tabpanel" id="p-twist" data-tab="twist" role="tabpanel" aria-labelledby="t-twist" hidden>
+    <section class="chapter split reveal" id="twist-side">
+      <div class="chap-copy">
+        <p class="chap-k"><span data-i18n="mod_label">Module</span> 3</p>
+        <h2 data-i18n="ct_h"></h2>
+        <p class="lead" data-i18n="ct_p"></p>
+      </div>
+      <div class="chap-ill"><svg class="ill" viewBox="0 0 300 110" role="img" aria-hidden="true"><rect x="20" y="92" width="260" height="10" rx="2" fill="#4b505a"/><path d="M60 92 V76 C60 64 74 58 88 40 L92 14" fill="none" stroke="#c0392b" stroke-width="6" stroke-linecap="round"/><path d="M120 92 V76 C120 64 134 58 148 40 L152 14" fill="none" stroke="#2e86c1" stroke-width="6" stroke-linecap="round"/><path d="M180 92 V76 C180 64 194 58 208 40 L212 14" fill="none" stroke="#1e8449" stroke-width="6" stroke-linecap="round"/><path d="M240 92 V76 C240 64 254 58 268 40 L272 14" fill="none" stroke="#52be80" stroke-width="6" stroke-linecap="round"/><text x="250.0" y="30.0" font-size="14" text-anchor="middle" fill="#f0b48e" font-weight="400">θ</text></svg></div>
+    </section>
+    <section class="mfg-method reveal approach">
+      <p class="eyebrow" data-i18n="at_k">Approach</p>
+      <h2 data-i18n="at_h"></h2>
+      <div class="mm-grid">
+        <article class="mm"><div class="mm-ill"><svg class="ill" viewBox="0 0 300 110" role="img" aria-hidden="true"><rect x="20" y="92" width="260" height="10" rx="2" fill="#4b505a"/><path d="M60 92 V76 C60 64 74 58 88 40 L92 14" fill="none" stroke="#c0392b" stroke-width="6" stroke-linecap="round"/><path d="M120 92 V76 C120 64 134 58 148 40 L152 14" fill="none" stroke="#2e86c1" stroke-width="6" stroke-linecap="round"/><path d="M180 92 V76 C180 64 194 58 208 40 L212 14" fill="none" stroke="#1e8449" stroke-width="6" stroke-linecap="round"/><path d="M240 92 V76 C240 64 254 58 268 40 L272 14" fill="none" stroke="#52be80" stroke-width="6" stroke-linecap="round"/><text x="250.0" y="30.0" font-size="14" text-anchor="middle" fill="#f0b48e" font-weight="400">θ</text></svg></div><p class="mm-n">1</p><h3 data-i18n="at1_h"></h3><p data-i18n="at1_p"></p><p class="mm-f" data-i18n="at1_f"></p></article>
+        <article class="mm"><div class="mm-ill"><svg class="ill" viewBox="0 0 300 110" role="img" aria-hidden="true"><path d="M70 100 V70 C70 50 100 40 120 22" fill="none" stroke="#d98b5f" stroke-width="7" stroke-linecap="round"/><path d="M150 100 V70 C150 50 180 40 200 22" fill="none" stroke="#2a78d6" stroke-width="7" stroke-linecap="round"/><path d="M99 52 L131 52" stroke="#4fd1a0" stroke-width="1.6"/><path d="M99 47 v10 M131 47 v10" stroke="#4fd1a0" stroke-width="1.6"/><text x="115.0" y="44.0" font-size="11" text-anchor="middle" fill="#4fd1a0" font-weight="400">d ≥ 0</text></svg></div><p class="mm-n">2</p><h3 data-i18n="at2_h"></h3><p data-i18n="at2_p"></p><p class="mm-f" data-i18n="at2_f"></p></article>
+        <article class="mm"><div class="mm-ill"><svg class="ill" viewBox="0 0 300 110" role="img" aria-hidden="true"><path d="M20 92 H280" stroke="rgba(255,255,255,.12)"/><path d="M40 92 V80" stroke="#d98b5f" stroke-width="6" stroke-linecap="round" opacity="0.35"/><path d="M92 92 V70" stroke="#d98b5f" stroke-width="6" stroke-linecap="round" opacity="0.48"/><path d="M144 92 V60" stroke="#d98b5f" stroke-width="6" stroke-linecap="round" opacity="0.61"/><path d="M196 92 V50" stroke="#d98b5f" stroke-width="6" stroke-linecap="round" opacity="0.74"/><path d="M248 92 V40" stroke="#d98b5f" stroke-width="6" stroke-linecap="round" opacity="0.87"/><path d="M30 30 C100 30 120 70 270 70" fill="none" stroke="#f0b48e" stroke-width="2"/><text x="150.0" y="22.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400" data-i18n="pl_axes"></text></svg></div><p class="mm-n">3</p><h3 data-i18n="at3_h"></h3><p data-i18n="at3_p"></p><p class="mm-f" data-i18n="at3_f"></p></article>
+      </div>
+    </section>
+    <section class="mstory">
+      <div class="story-text">
+        <article class="mstep">
+          <p class="num">01</p>
+          <h2 data-i18n="tst_s1_h"></h2>
+          <p data-i18n="tst_s1_p"></p>
+          <div class="mstep-fig"><svg class="ill stageplot" viewBox="0 0 300 110" role="img" aria-hidden="true"><rect x="20" y="92" width="260" height="10" rx="2" fill="#4b505a"/><path d="M60 92 V76 C60 64 74 58 88 40 L92 14" fill="none" stroke="#c0392b" stroke-width="6" stroke-linecap="round"/><path d="M120 92 V76 C120 64 134 58 148 40 L152 14" fill="none" stroke="#2e86c1" stroke-width="6" stroke-linecap="round"/><path d="M180 92 V76 C180 64 194 58 208 40 L212 14" fill="none" stroke="#1e8449" stroke-width="6" stroke-linecap="round"/><path d="M240 92 V76 C240 64 254 58 268 40 L272 14" fill="none" stroke="#52be80" stroke-width="6" stroke-linecap="round"/><text x="250.0" y="30.0" font-size="14" text-anchor="middle" fill="#f0b48e" font-weight="400">θ</text></svg></div>
+        </article>
+        <article class="mstep">
+          <p class="num">02</p>
+          <h2 data-i18n="tst_s2_h"></h2>
+          <p data-i18n="tst_s2_p"></p>
+          <div class="mstep-fig"><svg class="plot stageplot" viewBox="0 0 360 178" role="img" aria-hidden="true"><text x="32.0" y="21.0" font-size="11" text-anchor="end" fill="#8e9096" font-weight="400">L1</text><rect x="40" y="10" width="120.8" height="14" rx="3" fill="#c0392b"/><text x="166.8" y="21.0" font-size="11" text-anchor="start" fill="#ececee" font-weight="400">20.9°</text><text x="32.0" y="47.0" font-size="11" text-anchor="end" fill="#8e9096" font-weight="400">L2</text><rect x="40" y="36" width="130.0" height="14" rx="3" fill="#e67e22"/><text x="176.0" y="47.0" font-size="11" text-anchor="start" fill="#ececee" font-weight="400">22.5°</text><text x="32.0" y="73.0" font-size="11" text-anchor="end" fill="#8e9096" font-weight="400">L3</text><rect x="40" y="62" width="155.4" height="14" rx="3" fill="#2e86c1"/><text x="201.4" y="73.0" font-size="11" text-anchor="start" fill="#ececee" font-weight="400">26.9°</text><text x="32.0" y="99.0" font-size="11" text-anchor="end" fill="#8e9096" font-weight="400">L4</text><rect x="40" y="88" width="164.7" height="14" rx="3" fill="#5dade2"/><text x="210.7" y="99.0" font-size="11" text-anchor="start" fill="#ececee" font-weight="400">28.5°</text><text x="32.0" y="125.0" font-size="11" text-anchor="end" fill="#8e9096" font-weight="400">L5</text><rect x="40" y="114" width="210.9" height="14" rx="3" fill="#1e8449"/><text x="256.9" y="125.0" font-size="11" text-anchor="start" fill="#ececee" font-weight="400">36.5°</text><text x="32.0" y="151.0" font-size="11" text-anchor="end" fill="#8e9096" font-weight="400">L6</text><rect x="40" y="140" width="221.3" height="14" rx="3" fill="#52be80"/><text x="267.3" y="151.0" font-size="11" text-anchor="start" fill="#ececee" font-weight="400">38.3°</text></svg></div>
+        </article>
+        <article class="mstep">
+          <p class="num">03</p>
+          <h2 data-i18n="tst_s3_h"></h2>
+          <p data-i18n="tst_s3_p"></p>
+          <div class="mstep-fig"><svg class="plot stageplot" viewBox="0 0 360 200" role="img" aria-hidden="true"><path d="M40 14 V170 H346" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1"/><path d="M40 170.0 H346" stroke="rgba(255,255,255,.12)" stroke-dasharray="2 4"/><text x="34.0" y="174.0" font-size="10" text-anchor="end" fill="#5d5f66" font-weight="400">60</text><path d="M40 131.0 H346" stroke="rgba(255,255,255,.12)" stroke-dasharray="2 4"/><text x="34.0" y="135.0" font-size="10" text-anchor="end" fill="#5d5f66" font-weight="400">70</text><path d="M40 92.0 H346" stroke="rgba(255,255,255,.12)" stroke-dasharray="2 4"/><text x="34.0" y="96.0" font-size="10" text-anchor="end" fill="#5d5f66" font-weight="400">80</text><path d="M40 53.0 H346" stroke="rgba(255,255,255,.12)" stroke-dasharray="2 4"/><text x="34.0" y="57.0" font-size="10" text-anchor="end" fill="#5d5f66" font-weight="400">90</text><path d="M40 14.0 H346" stroke="rgba(255,255,255,.12)" stroke-dasharray="2 4"/><text x="34.0" y="18.0" font-size="10" text-anchor="end" fill="#5d5f66" font-weight="400">100</text><text x="57.0" y="186.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">32</text><text x="125.0" y="186.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">36</text><text x="193.0" y="186.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">40</text><text x="261.0" y="186.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">44</text><text x="329.0" y="186.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">48</text><path d="M57.0 143.2 L91.0 132.4 L113.1 125.0 L125.0 120.9 L164.1 106.7 L193.0 95.5 L261.0 66.5 L329.0 32.8" fill="none" stroke="#d98b5f" stroke-width="2.4" stroke-linejoin="round"/><circle cx="57.0" cy="143.2" r="2.6" fill="#d98b5f"/><circle cx="91.0" cy="132.4" r="2.6" fill="#d98b5f"/><circle cx="113.1" cy="125.0" r="2.6" fill="#d98b5f"/><circle cx="125.0" cy="120.9" r="2.6" fill="#d98b5f"/><circle cx="164.1" cy="106.7" r="2.6" fill="#d98b5f"/><circle cx="193.0" cy="95.5" r="2.6" fill="#d98b5f"/><circle cx="261.0" cy="66.5" r="2.6" fill="#d98b5f"/><circle cx="329.0" cy="32.8" r="2.6" fill="#d98b5f"/><circle cx="164.1" cy="106.7" r="6" fill="none" stroke="#4fd1a0" stroke-width="2"/><text x="173.1" y="98.7" font-size="11" text-anchor="start" fill="#4fd1a0" font-weight="600">76,2 mm</text><text x="346.0" y="196.0" font-size="10" text-anchor="end" fill="#8e9096" font-weight="400">θ_ref (°)</text><text x="4.0" y="16.0" font-size="10" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_tip">pl_tip</text></svg></div>
+        </article>
+        <article class="mstep">
+          <p class="num">04</p>
+          <h2 data-i18n="tst_s4_h"></h2>
+          <p data-i18n="tst_s4_p"></p>
+          <div class="mstep-fig"><svg class="plot stageplot" viewBox="0 0 360 200" role="img" aria-hidden="true"><path d="M40 14 V170 H346" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1"/><path d="M40 156.6 H346" stroke="rgba(255,255,255,.12)" stroke-dasharray="2 4"/><text x="34.0" y="160.6" font-size="10" text-anchor="end" fill="#5d5f66" font-weight="400">-0.4</text><path d="M40 111.7 H346" stroke="rgba(255,255,255,.12)" stroke-dasharray="2 4"/><text x="34.0" y="115.7" font-size="10" text-anchor="end" fill="#5d5f66" font-weight="400">-0.2</text><path d="M40 66.7 H346" stroke="rgba(255,255,255,.12)" stroke-dasharray="2 4"/><text x="34.0" y="70.7" font-size="10" text-anchor="end" fill="#5d5f66" font-weight="400">0</text><path d="M40 21.8 H346" stroke="rgba(255,255,255,.12)" stroke-dasharray="2 4"/><text x="34.0" y="25.8" font-size="10" text-anchor="end" fill="#5d5f66" font-weight="400">0.2</text><text x="59.1" y="186.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">34</text><text x="154.8" y="186.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">36.5</text><text x="223.6" y="186.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">38.3</text><text x="326.9" y="186.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">41</text><path d="M40 66.7 H346" stroke="#ef6b6b" stroke-width="1.2" stroke-dasharray="5 4"/><path d="M59.1 158.8 L108.8 151.9 L154.8 152.6 L193.0 120.0 L223.6 51.2 L269.5 25.2 L326.9 25.3" fill="none" stroke="#f0b48e" stroke-width="2.4" stroke-linejoin="round"/><circle cx="59.1" cy="158.8" r="2.6" fill="#f0b48e"/><circle cx="108.8" cy="151.9" r="2.6" fill="#f0b48e"/><circle cx="154.8" cy="152.6" r="2.6" fill="#f0b48e"/><circle cx="193.0" cy="120.0" r="2.6" fill="#f0b48e"/><circle cx="223.6" cy="51.2" r="2.6" fill="#f0b48e"/><circle cx="269.5" cy="25.2" r="2.6" fill="#f0b48e"/><circle cx="326.9" cy="25.3" r="2.6" fill="#f0b48e"/><circle cx="223.6" cy="51.2" r="6" fill="none" stroke="#4fd1a0" stroke-width="2"/><text x="232.6" y="43.2" font-size="11" text-anchor="start" fill="#4fd1a0" font-weight="600">+0,07</text><text x="346.0" y="196.0" font-size="10" text-anchor="end" fill="#8e9096" font-weight="400">θ_ref (°)</text><text x="4.0" y="16.0" font-size="10" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_sep">pl_sep</text></svg></div>
+        </article>
+      </div>
+      <div class="story-visual">
+        <div class="stage">
+          <div class="layer mlayer on"><svg class="ill stageplot" viewBox="0 0 300 110" role="img" aria-hidden="true"><rect x="20" y="92" width="260" height="10" rx="2" fill="#4b505a"/><path d="M60 92 V76 C60 64 74 58 88 40 L92 14" fill="none" stroke="#c0392b" stroke-width="6" stroke-linecap="round"/><path d="M120 92 V76 C120 64 134 58 148 40 L152 14" fill="none" stroke="#2e86c1" stroke-width="6" stroke-linecap="round"/><path d="M180 92 V76 C180 64 194 58 208 40 L212 14" fill="none" stroke="#1e8449" stroke-width="6" stroke-linecap="round"/><path d="M240 92 V76 C240 64 254 58 268 40 L272 14" fill="none" stroke="#52be80" stroke-width="6" stroke-linecap="round"/><text x="250.0" y="30.0" font-size="14" text-anchor="middle" fill="#f0b48e" font-weight="400">θ</text></svg></div>
+          <div class="layer mlayer"><svg class="plot stageplot" viewBox="0 0 360 178" role="img" aria-hidden="true"><text x="32.0" y="21.0" font-size="11" text-anchor="end" fill="#8e9096" font-weight="400">L1</text><rect x="40" y="10" width="120.8" height="14" rx="3" fill="#c0392b"/><text x="166.8" y="21.0" font-size="11" text-anchor="start" fill="#ececee" font-weight="400">20.9°</text><text x="32.0" y="47.0" font-size="11" text-anchor="end" fill="#8e9096" font-weight="400">L2</text><rect x="40" y="36" width="130.0" height="14" rx="3" fill="#e67e22"/><text x="176.0" y="47.0" font-size="11" text-anchor="start" fill="#ececee" font-weight="400">22.5°</text><text x="32.0" y="73.0" font-size="11" text-anchor="end" fill="#8e9096" font-weight="400">L3</text><rect x="40" y="62" width="155.4" height="14" rx="3" fill="#2e86c1"/><text x="201.4" y="73.0" font-size="11" text-anchor="start" fill="#ececee" font-weight="400">26.9°</text><text x="32.0" y="99.0" font-size="11" text-anchor="end" fill="#8e9096" font-weight="400">L4</text><rect x="40" y="88" width="164.7" height="14" rx="3" fill="#5dade2"/><text x="210.7" y="99.0" font-size="11" text-anchor="start" fill="#ececee" font-weight="400">28.5°</text><text x="32.0" y="125.0" font-size="11" text-anchor="end" fill="#8e9096" font-weight="400">L5</text><rect x="40" y="114" width="210.9" height="14" rx="3" fill="#1e8449"/><text x="256.9" y="125.0" font-size="11" text-anchor="start" fill="#ececee" font-weight="400">36.5°</text><text x="32.0" y="151.0" font-size="11" text-anchor="end" fill="#8e9096" font-weight="400">L6</text><rect x="40" y="140" width="221.3" height="14" rx="3" fill="#52be80"/><text x="267.3" y="151.0" font-size="11" text-anchor="start" fill="#ececee" font-weight="400">38.3°</text></svg></div>
+          <div class="layer mlayer"><svg class="plot stageplot" viewBox="0 0 360 200" role="img" aria-hidden="true"><path d="M40 14 V170 H346" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1"/><path d="M40 170.0 H346" stroke="rgba(255,255,255,.12)" stroke-dasharray="2 4"/><text x="34.0" y="174.0" font-size="10" text-anchor="end" fill="#5d5f66" font-weight="400">60</text><path d="M40 131.0 H346" stroke="rgba(255,255,255,.12)" stroke-dasharray="2 4"/><text x="34.0" y="135.0" font-size="10" text-anchor="end" fill="#5d5f66" font-weight="400">70</text><path d="M40 92.0 H346" stroke="rgba(255,255,255,.12)" stroke-dasharray="2 4"/><text x="34.0" y="96.0" font-size="10" text-anchor="end" fill="#5d5f66" font-weight="400">80</text><path d="M40 53.0 H346" stroke="rgba(255,255,255,.12)" stroke-dasharray="2 4"/><text x="34.0" y="57.0" font-size="10" text-anchor="end" fill="#5d5f66" font-weight="400">90</text><path d="M40 14.0 H346" stroke="rgba(255,255,255,.12)" stroke-dasharray="2 4"/><text x="34.0" y="18.0" font-size="10" text-anchor="end" fill="#5d5f66" font-weight="400">100</text><text x="57.0" y="186.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">32</text><text x="125.0" y="186.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">36</text><text x="193.0" y="186.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">40</text><text x="261.0" y="186.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">44</text><text x="329.0" y="186.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">48</text><path d="M57.0 143.2 L91.0 132.4 L113.1 125.0 L125.0 120.9 L164.1 106.7 L193.0 95.5 L261.0 66.5 L329.0 32.8" fill="none" stroke="#d98b5f" stroke-width="2.4" stroke-linejoin="round"/><circle cx="57.0" cy="143.2" r="2.6" fill="#d98b5f"/><circle cx="91.0" cy="132.4" r="2.6" fill="#d98b5f"/><circle cx="113.1" cy="125.0" r="2.6" fill="#d98b5f"/><circle cx="125.0" cy="120.9" r="2.6" fill="#d98b5f"/><circle cx="164.1" cy="106.7" r="2.6" fill="#d98b5f"/><circle cx="193.0" cy="95.5" r="2.6" fill="#d98b5f"/><circle cx="261.0" cy="66.5" r="2.6" fill="#d98b5f"/><circle cx="329.0" cy="32.8" r="2.6" fill="#d98b5f"/><circle cx="164.1" cy="106.7" r="6" fill="none" stroke="#4fd1a0" stroke-width="2"/><text x="173.1" y="98.7" font-size="11" text-anchor="start" fill="#4fd1a0" font-weight="600">76,2 mm</text><text x="346.0" y="196.0" font-size="10" text-anchor="end" fill="#8e9096" font-weight="400">θ_ref (°)</text><text x="4.0" y="16.0" font-size="10" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_tip">pl_tip</text></svg></div>
+          <div class="layer mlayer"><svg class="plot stageplot" viewBox="0 0 360 200" role="img" aria-hidden="true"><path d="M40 14 V170 H346" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1"/><path d="M40 156.6 H346" stroke="rgba(255,255,255,.12)" stroke-dasharray="2 4"/><text x="34.0" y="160.6" font-size="10" text-anchor="end" fill="#5d5f66" font-weight="400">-0.4</text><path d="M40 111.7 H346" stroke="rgba(255,255,255,.12)" stroke-dasharray="2 4"/><text x="34.0" y="115.7" font-size="10" text-anchor="end" fill="#5d5f66" font-weight="400">-0.2</text><path d="M40 66.7 H346" stroke="rgba(255,255,255,.12)" stroke-dasharray="2 4"/><text x="34.0" y="70.7" font-size="10" text-anchor="end" fill="#5d5f66" font-weight="400">0</text><path d="M40 21.8 H346" stroke="rgba(255,255,255,.12)" stroke-dasharray="2 4"/><text x="34.0" y="25.8" font-size="10" text-anchor="end" fill="#5d5f66" font-weight="400">0.2</text><text x="59.1" y="186.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">34</text><text x="154.8" y="186.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">36.5</text><text x="223.6" y="186.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">38.3</text><text x="326.9" y="186.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">41</text><path d="M40 66.7 H346" stroke="#ef6b6b" stroke-width="1.2" stroke-dasharray="5 4"/><path d="M59.1 158.8 L108.8 151.9 L154.8 152.6 L193.0 120.0 L223.6 51.2 L269.5 25.2 L326.9 25.3" fill="none" stroke="#f0b48e" stroke-width="2.4" stroke-linejoin="round"/><circle cx="59.1" cy="158.8" r="2.6" fill="#f0b48e"/><circle cx="108.8" cy="151.9" r="2.6" fill="#f0b48e"/><circle cx="154.8" cy="152.6" r="2.6" fill="#f0b48e"/><circle cx="193.0" cy="120.0" r="2.6" fill="#f0b48e"/><circle cx="223.6" cy="51.2" r="2.6" fill="#f0b48e"/><circle cx="269.5" cy="25.2" r="2.6" fill="#f0b48e"/><circle cx="326.9" cy="25.3" r="2.6" fill="#f0b48e"/><circle cx="223.6" cy="51.2" r="6" fill="none" stroke="#4fd1a0" stroke-width="2"/><text x="232.6" y="43.2" font-size="11" text-anchor="start" fill="#4fd1a0" font-weight="600">+0,07</text><text x="346.0" y="196.0" font-size="10" text-anchor="end" fill="#8e9096" font-weight="400">θ_ref (°)</text><text x="4.0" y="16.0" font-size="10" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_sep">pl_sep</text></svg></div>
+        </div>
+      </div>
+    </section>
+    <section class="results">
+      <h2 class="reveal" data-i18n="r_h"></h2>
+      <div class="r-grid">
+        <article class="rc c4 reveal"><p class="rc-k" data-i18n="tq1_k"></p><p class="rc-big"><b data-count="76.2" data-dec="1">76.2</b><em>mm</em></p><div class="hbars wide"><div class="hb" style="--c:#c0392b;--w:0.9983;--i:0"><span data-i18n="pl_L1"></span><u><i></i></u><b data-v="119.8" data-d="1" data-u=" mm">119.8 mm</b></div><div class="hb" style="--c:#e67e22;--w:0.9767;--i:1"><span data-i18n="pl_L2"></span><u><i></i></u><b data-v="117.2" data-d="1" data-u=" mm">117.2 mm</b></div><div class="hb" style="--c:#2e86c1;--w:0.9333;--i:2"><span data-i18n="pl_L3"></span><u><i></i></u><b data-v="112.0" data-d="0" data-u=" mm">112 mm</b></div><div class="hb" style="--c:#5dade2;--w:0.9117;--i:3"><span data-i18n="pl_L4"></span><u><i></i></u><b data-v="109.4" data-d="1" data-u=" mm">109.4 mm</b></div><div class="hb" style="--c:#1e8449;--w:0.8575;--i:4"><span data-i18n="pl_L5"></span><u><i></i></u><b data-v="102.9" data-d="1" data-u=" mm">102.9 mm</b></div><div class="hb" style="--c:#52be80;--w:0.8383;--i:5"><span data-i18n="pl_L6"></span><u><i></i></u><b data-v="100.6" data-d="1" data-u=" mm">100.6 mm</b></div></div><p class="rc-note" data-i18n="tq1_n"></p></article>
+        <article class="rc c4 reveal"><p class="rc-k" data-i18n="tq2_k"></p><p class="rc-big"><b data-count="108" data-dec="0">108</b><em data-i18n="pl_legsfree"></em></p><div class="hbars wide"><div class="hb" style="--c:#2a78d6;--w:1.0000;--i:0"><span data-i18n="pl_r_red"></span><u><i></i></u><b data-v="72" data-d="0" data-u="">72</b></div><div class="hb" style="--c:#eb6834;--w:0.4167;--i:1"><span data-i18n="pl_r_jump"></span><u><i></i></u><b data-v="30" data-d="0" data-u="">30</b></div><div class="hb" style="--c:#1baf7a;--w:0.0417;--i:2"><span data-i18n="pl_r_term"></span><u><i></i></u><b data-v="3" data-d="0" data-u="">3</b></div><div class="hb" style="--c:#eda100;--w:0.0417;--i:3"><span data-i18n="pl_r_neut"></span><u><i></i></u><b data-v="3" data-d="0" data-u="">3</b></div></div><p class="rc-note" data-i18n="tq2_n"></p></article>
+        <article class="rc c4 reveal"><p class="rc-k" data-i18n="tq3_k"></p><p class="rc-big"><b data-count="10" data-dec="0">10</b><em>/ 10</em></p><div class="dotrows"><div><span></span><p><i class="f" style="--c:#4fd1a0;--d:0ms"></i><i class="f" style="--c:#4fd1a0;--d:60ms"></i><i class="f" style="--c:#4fd1a0;--d:120ms"></i><i class="f" style="--c:#4fd1a0;--d:180ms"></i><i class="f" style="--c:#4fd1a0;--d:240ms"></i><i class="f" style="--c:#4fd1a0;--d:300ms"></i><i class="f" style="--c:#4fd1a0;--d:360ms"></i><i class="f" style="--c:#4fd1a0;--d:420ms"></i><i class="f" style="--c:#4fd1a0;--d:480ms"></i><i class="f" style="--c:#4fd1a0;--d:540ms"></i></p></div></div><p class="rc-note" data-i18n="tq3_n"></p></article>
+      </div>
+    </section>
+    <section class="shots">
+      <h2 class="reveal" data-i18n="ts_h"></h2>
+      <div class="shot-item reveal">
+        <figure class="tilt" data-tilt="-1"><img data-img="sp_t_einstellen" alt="" width="1600" height="841" loading="lazy"></figure>
+        <div class="shot-copy"><p class="num">01</p><h3 data-i18n="ts1_h"></h3><p data-i18n="ts1_p"></p></div>
+      </div>
+      <div class="shot-item rev reveal">
+        <figure class="tilt" data-tilt="1"><img data-img="sp_s_worst" alt="" width="1600" height="841" loading="lazy"></figure>
+        <div class="shot-copy"><p class="num">02</p><h3 data-i18n="ts2_h"></h3><p data-i18n="ts2_p"></p></div>
+      </div>
+    </section>
+    <section class="demo reveal">
+      <div class="demo-copy">
+        <h2 data-i18n="ct_dh"></h2>
+        <p data-i18n="ct_dp"></p>
+        <a class="btn" href="suite/index.html#s=2&t=1" data-i18n="cta_suite_view">Open the suite preview</a>
+      </div>
+      <figure class="tilt big" data-tilt="1"><img data-img="sp_t_prozess" alt="" width="1600" height="841" loading="lazy"></figure>
+    </section>
+  </div>
+  <div class="tabpanel" id="p-busbar" data-tab="busbar" role="tabpanel" aria-labelledby="t-busbar" hidden>
+    <section class="chapter split reveal" id="busbar-concept">
+      <div class="chap-copy">
+        <p class="chap-k"><span data-i18n="mod_label">Module</span> 4</p>
+        <h2 data-i18n="cb_h"></h2>
+        <p class="lead" data-i18n="cb_p"></p>
+      </div>
+      <div class="chap-ill"><svg class="ill" viewBox="0 0 300 110" role="img" aria-hidden="true"><rect x="30" y="94" width="240" height="8" rx="2" fill="#3a3c42"/><rect x="40" y="78" width="200" height="8" rx="2" fill="#d98b5f"/><rect x="46" y="60" width="188" height="8" rx="2" fill="#d98b5f"/><rect x="52" y="42" width="176" height="8" rx="2" fill="#8a949e"/><rect x="58" y="24" width="164" height="8" rx="2" fill="#2a78d6"/><path d="M262 78 V60" stroke="#4fd1a0" stroke-width="1.6"/><text x="272.0" y="72.0" font-size="11" text-anchor="middle" fill="#4fd1a0" font-weight="400">c</text></svg></div>
+    </section>
+    <section class="mfg-method reveal approach">
+      <p class="eyebrow" data-i18n="ab_k">Approach</p>
+      <h2 data-i18n="ab_h"></h2>
+      <div class="mm-grid">
+        <article class="mm"><div class="mm-ill"><svg class="ill" viewBox="0 0 300 110" role="img" aria-hidden="true"><rect x="30" y="94" width="240" height="8" rx="2" fill="#3a3c42"/><rect x="40" y="78" width="200" height="8" rx="2" fill="#d98b5f"/><rect x="46" y="60" width="188" height="8" rx="2" fill="#d98b5f"/><rect x="52" y="42" width="176" height="8" rx="2" fill="#8a949e"/><rect x="58" y="24" width="164" height="8" rx="2" fill="#2a78d6"/><path d="M262 78 V60" stroke="#4fd1a0" stroke-width="1.6"/><text x="272.0" y="72.0" font-size="11" text-anchor="middle" fill="#4fd1a0" font-weight="400">c</text></svg></div><p class="mm-n">1</p><h3 data-i18n="ab1_h"></h3><p data-i18n="ab1_p"></p><p class="mm-f" data-i18n="ab1_f"></p></article>
+        <article class="mm"><div class="mm-ill"><svg class="ill" viewBox="0 0 300 110" role="img" aria-hidden="true"><path d="M40 100 A120 120 0 0 1 260 100" fill="none" stroke="rgba(255,255,255,.12)"/><path d="M70 100 A90 90 0 0 1 230 100" fill="none" stroke="rgba(255,255,255,.12)"/><path d="M66 70 A100 100 0 0 1 140 26 L140 40 A86 86 0 0 1 190 50" fill="none" stroke="#d98b5f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M200 44 A96 96 0 0 1 236 78" fill="none" stroke="#eb6834" stroke-width="5" stroke-linecap="round"/></svg></div><p class="mm-n">2</p><h3 data-i18n="ab2_h"></h3><p data-i18n="ab2_p"></p><p class="mm-f" data-i18n="ab2_f"></p></article>
+        <article class="mm"><div class="mm-ill"><svg class="ill" viewBox="0 0 300 110" role="img" aria-hidden="true"><rect x="40" y="40" width="200" height="24" rx="4" fill="#d98b5f"/><path d="M60 34 q8 -10 0 -20" fill="none" stroke="#ef6b6b" stroke-width="2" opacity=".8"/><path d="M100 34 q8 -10 0 -20" fill="none" stroke="#ef6b6b" stroke-width="2" opacity=".8"/><path d="M140 34 q8 -10 0 -20" fill="none" stroke="#ef6b6b" stroke-width="2" opacity=".8"/><path d="M180 34 q8 -10 0 -20" fill="none" stroke="#ef6b6b" stroke-width="2" opacity=".8"/><path d="M220 34 q8 -10 0 -20" fill="none" stroke="#ef6b6b" stroke-width="2" opacity=".8"/><text x="140.0" y="56.0" font-size="12" text-anchor="middle" fill="#0e0e10" font-weight="600">J = I / A</text><text x="140.0" y="92.0" font-size="11" text-anchor="middle" fill="#f0b48e" font-weight="400">q = I²ρ / (A·U)</text></svg></div><p class="mm-n">3</p><h3 data-i18n="ab3_h"></h3><p data-i18n="ab3_p"></p><p class="mm-f" data-i18n="ab3_f"></p></article>
+      </div>
+    </section>
+    <section class="mstory">
+      <div class="story-text">
+        <article class="mstep">
+          <p class="num">01</p>
+          <h2 data-i18n="bst_s1_h"></h2>
+          <p data-i18n="bst_s1_p"></p>
+          <div class="mstep-fig"><svg class="plot stageplot" viewBox="0 0 360 200" role="img" aria-hidden="true"><rect x="40" y="186" width="200" height="8" rx="2" fill="#3a3c42"/><text x="246.0" y="193.0" font-size="10" text-anchor="start" fill="#5d5f66" font-weight="400" data-i18n="pl_tips"></text><rect x="60" y="157.6" width="170" height="9.9" rx="2" fill="#d98b5f"/><text x="246.0" y="166.6" font-size="10" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_s1"></text><text x="52.0" y="166.6" font-size="9" text-anchor="end" fill="#5d5f66" font-weight="400">8.6</text><rect x="60" y="129.2" width="170" height="9.9" rx="2" fill="#d98b5f"/><text x="246.0" y="138.2" font-size="10" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_s2"></text><text x="52.0" y="138.2" font-size="9" text-anchor="end" fill="#5d5f66" font-weight="400">17.2</text><rect x="60" y="100.9" width="170" height="9.9" rx="2" fill="#d98b5f"/><text x="246.0" y="109.8" font-size="10" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_s3"></text><text x="52.0" y="109.9" font-size="9" text-anchor="end" fill="#5d5f66" font-weight="400">25.8</text><rect x="60" y="72.5" width="170" height="9.9" rx="2" fill="#d98b5f"/><text x="246.0" y="81.4" font-size="10" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_s4"></text><text x="52.0" y="81.5" font-size="9" text-anchor="end" fill="#5d5f66" font-weight="400">34.4</text><rect x="60" y="44.1" width="170" height="9.9" rx="2" fill="#8a949e"/><text x="246.0" y="53.1" font-size="10" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_n"></text><text x="52.0" y="53.1" font-size="9" text-anchor="end" fill="#5d5f66" font-weight="400">43</text><rect x="60" y="15.7" width="170" height="9.9" rx="2" fill="#2a78d6"/><text x="246.0" y="24.7" font-size="10" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_p"></text><text x="52.0" y="24.7" font-size="9" text-anchor="end" fill="#5d5f66" font-weight="400">51.6</text><path d="M36 157.6 V139.1" stroke="#4fd1a0" stroke-width="1.6"/><text x="32.0" y="152.4" font-size="10" text-anchor="end" fill="#4fd1a0" font-weight="400">c</text></svg></div>
+        </article>
+        <article class="mstep">
+          <p class="num">02</p>
+          <h2 data-i18n="bst_s2_h"></h2>
+          <p data-i18n="bst_s2_p"></p>
+          <div class="mstep-fig"><svg class="ill stageplot" viewBox="0 0 300 110" role="img" aria-hidden="true"><path d="M40 100 A120 120 0 0 1 260 100" fill="none" stroke="rgba(255,255,255,.12)"/><path d="M70 100 A90 90 0 0 1 230 100" fill="none" stroke="rgba(255,255,255,.12)"/><path d="M66 70 A100 100 0 0 1 140 26 L140 40 A86 86 0 0 1 190 50" fill="none" stroke="#d98b5f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M200 44 A96 96 0 0 1 236 78" fill="none" stroke="#eb6834" stroke-width="5" stroke-linecap="round"/></svg></div>
+        </article>
+        <article class="mstep">
+          <p class="num">03</p>
+          <h2 data-i18n="bst_s3_h"></h2>
+          <p data-i18n="bst_s3_p"></p>
+          <div class="mstep-fig"><svg class="plot stageplot" viewBox="0 0 360 210" role="img" aria-hidden="true"><rect x="50" y="25.1" width="22" height="124.9" rx="3" fill="#5d5f66"/><text x="61.0" y="20.1" font-size="10" text-anchor="middle" fill="#ececee" font-weight="400">269</text><rect x="76" y="114.2" width="22" height="35.8" rx="3" fill="#d98b5f"/><text x="87.0" y="109.2" font-size="10" text-anchor="middle" fill="#ececee" font-weight="400">77</text><text x="74.0" y="166.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">1</text><rect x="126" y="101.7" width="22" height="48.3" rx="3" fill="#5d5f66"/><text x="137.0" y="96.7" font-size="10" text-anchor="middle" fill="#ececee" font-weight="400">104</text><rect x="152" y="135.1" width="22" height="14.9" rx="3" fill="#d98b5f"/><text x="163.0" y="130.1" font-size="10" text-anchor="middle" fill="#ececee" font-weight="400">32</text><text x="150.0" y="166.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">2</text><rect x="202" y="112.9" width="22" height="37.1" rx="3" fill="#5d5f66"/><text x="213.0" y="107.9" font-size="10" text-anchor="middle" fill="#ececee" font-weight="400">80</text><rect x="228" y="144.9" width="22" height="5.1" rx="3" fill="#d98b5f"/><text x="239.0" y="139.9" font-size="10" text-anchor="middle" fill="#ececee" font-weight="400">11</text><text x="226.0" y="166.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">3</text><rect x="278" y="137.5" width="22" height="12.5" rx="3" fill="#5d5f66"/><text x="289.0" y="132.5" font-size="10" text-anchor="middle" fill="#ececee" font-weight="400">27</text><rect x="304" y="150.0" width="22" height="1.5" rx="3" fill="#d98b5f"/><text x="315.0" y="145.0" font-size="10" text-anchor="middle" fill="#4fd1a0" font-weight="400">0</text><text x="302.0" y="166.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">4</text><path d="M40 10 V150 H350" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1"/><text x="350.0" y="182.0" font-size="10" text-anchor="end" fill="#8e9096" font-weight="400" data-i18n="pl_levels"></text><rect x="60" y="194" width="10" height="10" rx="2" fill="#5d5f66"/><text x="75.0" y="203.0" font-size="10" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_ontips"></text><rect x="190" y="194" width="10" height="10" rx="2" fill="#d98b5f"/><text x="205.0" y="203.0" font-size="10" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_raised"></text></svg></div>
+        </article>
+        <article class="mstep">
+          <p class="num">04</p>
+          <h2 data-i18n="bst_s4_h"></h2>
+          <p data-i18n="bst_s4_p"></p>
+          <div class="mstep-fig"><svg class="plot stageplot" viewBox="0 0 360 100" role="img" aria-hidden="true"><text x="82.0" y="21.0" font-size="11" text-anchor="end" fill="#8e9096" font-weight="400" data-i18n="pl_jumper"></text><rect x="90" y="10" width="155.4" height="14" rx="3" fill="#d98b5f"/><text x="251.4" y="21.0" font-size="11" text-anchor="start" fill="#ececee" font-weight="400">22.2</text><text x="82.0" y="47.0" font-size="11" text-anchor="end" fill="#8e9096" font-weight="400" data-i18n="pl_neutral"></text><rect x="90" y="36" width="155.4" height="14" rx="3" fill="#8a949e"/><text x="251.4" y="47.0" font-size="11" text-anchor="start" fill="#ececee" font-weight="400">22.2</text><text x="82.0" y="73.0" font-size="11" text-anchor="end" fill="#8e9096" font-weight="400" data-i18n="pl_phase"></text><rect x="90" y="62" width="155.4" height="14" rx="3" fill="#2a78d6"/><text x="251.4" y="73.0" font-size="11" text-anchor="start" fill="#ececee" font-weight="400">22.2</text><path d="M272.7 4 V86" stroke="#ef6b6b" stroke-width="1.4" stroke-dasharray="4 3"/><text x="272.7" y="98.0" font-size="10" text-anchor="middle" fill="#ef6b6b" font-weight="400">26,1 A/mm²</text></svg></div>
+        </article>
+      </div>
+      <div class="story-visual">
+        <div class="stage">
+          <div class="layer mlayer on"><svg class="plot stageplot" viewBox="0 0 360 200" role="img" aria-hidden="true"><rect x="40" y="186" width="200" height="8" rx="2" fill="#3a3c42"/><text x="246.0" y="193.0" font-size="10" text-anchor="start" fill="#5d5f66" font-weight="400" data-i18n="pl_tips"></text><rect x="60" y="157.6" width="170" height="9.9" rx="2" fill="#d98b5f"/><text x="246.0" y="166.6" font-size="10" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_s1"></text><text x="52.0" y="166.6" font-size="9" text-anchor="end" fill="#5d5f66" font-weight="400">8.6</text><rect x="60" y="129.2" width="170" height="9.9" rx="2" fill="#d98b5f"/><text x="246.0" y="138.2" font-size="10" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_s2"></text><text x="52.0" y="138.2" font-size="9" text-anchor="end" fill="#5d5f66" font-weight="400">17.2</text><rect x="60" y="100.9" width="170" height="9.9" rx="2" fill="#d98b5f"/><text x="246.0" y="109.8" font-size="10" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_s3"></text><text x="52.0" y="109.9" font-size="9" text-anchor="end" fill="#5d5f66" font-weight="400">25.8</text><rect x="60" y="72.5" width="170" height="9.9" rx="2" fill="#d98b5f"/><text x="246.0" y="81.4" font-size="10" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_s4"></text><text x="52.0" y="81.5" font-size="9" text-anchor="end" fill="#5d5f66" font-weight="400">34.4</text><rect x="60" y="44.1" width="170" height="9.9" rx="2" fill="#8a949e"/><text x="246.0" y="53.1" font-size="10" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_n"></text><text x="52.0" y="53.1" font-size="9" text-anchor="end" fill="#5d5f66" font-weight="400">43</text><rect x="60" y="15.7" width="170" height="9.9" rx="2" fill="#2a78d6"/><text x="246.0" y="24.7" font-size="10" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_p"></text><text x="52.0" y="24.7" font-size="9" text-anchor="end" fill="#5d5f66" font-weight="400">51.6</text><path d="M36 157.6 V139.1" stroke="#4fd1a0" stroke-width="1.6"/><text x="32.0" y="152.4" font-size="10" text-anchor="end" fill="#4fd1a0" font-weight="400">c</text></svg></div>
+          <div class="layer mlayer"><svg class="ill stageplot" viewBox="0 0 300 110" role="img" aria-hidden="true"><path d="M40 100 A120 120 0 0 1 260 100" fill="none" stroke="rgba(255,255,255,.12)"/><path d="M70 100 A90 90 0 0 1 230 100" fill="none" stroke="rgba(255,255,255,.12)"/><path d="M66 70 A100 100 0 0 1 140 26 L140 40 A86 86 0 0 1 190 50" fill="none" stroke="#d98b5f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M200 44 A96 96 0 0 1 236 78" fill="none" stroke="#eb6834" stroke-width="5" stroke-linecap="round"/></svg></div>
+          <div class="layer mlayer"><svg class="plot stageplot" viewBox="0 0 360 210" role="img" aria-hidden="true"><rect x="50" y="25.1" width="22" height="124.9" rx="3" fill="#5d5f66"/><text x="61.0" y="20.1" font-size="10" text-anchor="middle" fill="#ececee" font-weight="400">269</text><rect x="76" y="114.2" width="22" height="35.8" rx="3" fill="#d98b5f"/><text x="87.0" y="109.2" font-size="10" text-anchor="middle" fill="#ececee" font-weight="400">77</text><text x="74.0" y="166.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">1</text><rect x="126" y="101.7" width="22" height="48.3" rx="3" fill="#5d5f66"/><text x="137.0" y="96.7" font-size="10" text-anchor="middle" fill="#ececee" font-weight="400">104</text><rect x="152" y="135.1" width="22" height="14.9" rx="3" fill="#d98b5f"/><text x="163.0" y="130.1" font-size="10" text-anchor="middle" fill="#ececee" font-weight="400">32</text><text x="150.0" y="166.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">2</text><rect x="202" y="112.9" width="22" height="37.1" rx="3" fill="#5d5f66"/><text x="213.0" y="107.9" font-size="10" text-anchor="middle" fill="#ececee" font-weight="400">80</text><rect x="228" y="144.9" width="22" height="5.1" rx="3" fill="#d98b5f"/><text x="239.0" y="139.9" font-size="10" text-anchor="middle" fill="#ececee" font-weight="400">11</text><text x="226.0" y="166.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">3</text><rect x="278" y="137.5" width="22" height="12.5" rx="3" fill="#5d5f66"/><text x="289.0" y="132.5" font-size="10" text-anchor="middle" fill="#ececee" font-weight="400">27</text><rect x="304" y="150.0" width="22" height="1.5" rx="3" fill="#d98b5f"/><text x="315.0" y="145.0" font-size="10" text-anchor="middle" fill="#4fd1a0" font-weight="400">0</text><text x="302.0" y="166.0" font-size="10" text-anchor="middle" fill="#5d5f66" font-weight="400">4</text><path d="M40 10 V150 H350" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1"/><text x="350.0" y="182.0" font-size="10" text-anchor="end" fill="#8e9096" font-weight="400" data-i18n="pl_levels"></text><rect x="60" y="194" width="10" height="10" rx="2" fill="#5d5f66"/><text x="75.0" y="203.0" font-size="10" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_ontips"></text><rect x="190" y="194" width="10" height="10" rx="2" fill="#d98b5f"/><text x="205.0" y="203.0" font-size="10" text-anchor="start" fill="#8e9096" font-weight="400" data-i18n="pl_raised"></text></svg></div>
+          <div class="layer mlayer"><svg class="plot stageplot" viewBox="0 0 360 100" role="img" aria-hidden="true"><text x="82.0" y="21.0" font-size="11" text-anchor="end" fill="#8e9096" font-weight="400" data-i18n="pl_jumper"></text><rect x="90" y="10" width="155.4" height="14" rx="3" fill="#d98b5f"/><text x="251.4" y="21.0" font-size="11" text-anchor="start" fill="#ececee" font-weight="400">22.2</text><text x="82.0" y="47.0" font-size="11" text-anchor="end" fill="#8e9096" font-weight="400" data-i18n="pl_neutral"></text><rect x="90" y="36" width="155.4" height="14" rx="3" fill="#8a949e"/><text x="251.4" y="47.0" font-size="11" text-anchor="start" fill="#ececee" font-weight="400">22.2</text><text x="82.0" y="73.0" font-size="11" text-anchor="end" fill="#8e9096" font-weight="400" data-i18n="pl_phase"></text><rect x="90" y="62" width="155.4" height="14" rx="3" fill="#2a78d6"/><text x="251.4" y="73.0" font-size="11" text-anchor="start" fill="#ececee" font-weight="400">22.2</text><path d="M272.7 4 V86" stroke="#ef6b6b" stroke-width="1.4" stroke-dasharray="4 3"/><text x="272.7" y="98.0" font-size="10" text-anchor="middle" fill="#ef6b6b" font-weight="400">26,1 A/mm²</text></svg></div>
+        </div>
+      </div>
+    </section>
+    <section class="results">
+      <h2 class="reveal" data-i18n="r_h"></h2>
+      <div class="r-grid">
+        <article class="rc c4 reveal"><p class="rc-k" data-i18n="bq1_k"></p><p class="rc-big"><b data-count="51.6" data-dec="1">51.6</b><em>mm</em></p><div class="hbars wide"><div class="hb" style="--c:#d98b5f;--w:0.1667;--i:0"><span data-i18n="pl_s1"></span><u><i></i></u><b data-v="8.6" data-d="1" data-u=" mm">8.6 mm</b></div><div class="hb" style="--c:#d98b5f;--w:0.3333;--i:1"><span data-i18n="pl_s2"></span><u><i></i></u><b data-v="17.2" data-d="1" data-u=" mm">17.2 mm</b></div><div class="hb" style="--c:#d98b5f;--w:0.5000;--i:2"><span data-i18n="pl_s3"></span><u><i></i></u><b data-v="25.8" data-d="1" data-u=" mm">25.8 mm</b></div><div class="hb" style="--c:#d98b5f;--w:0.6667;--i:3"><span data-i18n="pl_s4"></span><u><i></i></u><b data-v="34.4" data-d="1" data-u=" mm">34.4 mm</b></div><div class="hb" style="--c:#8a949e;--w:0.8333;--i:4"><span data-i18n="pl_n"></span><u><i></i></u><b data-v="43.0" data-d="0" data-u=" mm">43 mm</b></div><div class="hb" style="--c:#2a78d6;--w:1.0000;--i:5"><span data-i18n="pl_p"></span><u><i></i></u><b data-v="51.6" data-d="1" data-u=" mm">51.6 mm</b></div></div><p class="rc-note" data-i18n="bq1_n"></p></article>
+        <article class="rc c4 reveal"><p class="rc-k" data-i18n="bq2_k"></p><p class="rc-big"><b data-count="0" data-dec="0">0</b><em data-i18n="pl_conf"></em></p><div class="hbars wide"><div class="hb" style="--c:#5d5f66;--w:1.0000;--i:0"><span data-i18n="pl_q_on"></span><u><i></i></u><b data-v="27" data-d="0" data-u="">27</b></div><div class="hb" style="--c:#d98b5f;--w:0.0000;--i:1"><span data-i18n="pl_q_up"></span><u><i></i></u><b data-v="0.001" data-d="0" data-u="">0</b></div></div><p class="rc-note" data-i18n="bq2_n"></p></article>
+        <article class="rc c4 reveal"><p class="rc-k" data-i18n="bq3_k"></p><p class="rc-big"><b data-count="0.75" data-dec="2">0.75</b><em>×</em></p><div class="hbars wide"><div class="hb" style="--c:#d98b5f;--w:0.7500;--i:0"><span data-i18n="pl_jumper"></span><u><i></i></u><b data-v="0.75" data-d="2" data-u=" ×">0.75 ×</b></div><div class="hb" style="--c:#8a949e;--w:0.7500;--i:1"><span data-i18n="pl_neutral"></span><u><i></i></u><b data-v="0.75" data-d="2" data-u=" ×">0.75 ×</b></div><div class="hb" style="--c:#2a78d6;--w:0.7500;--i:2"><span data-i18n="pl_phase"></span><u><i></i></u><b data-v="0.75" data-d="2" data-u=" ×">0.75 ×</b></div><div class="hb" style="--c:#5d5f66;--w:1.0000;--i:3"><span data-i18n="pl_cond"></span><u><i></i></u><b data-v="1.0" data-d="2" data-u=" ×">1.00 ×</b></div></div><p class="rc-note" data-i18n="bq3_n"></p></article>
+      </div>
+    </section>
+    <section class="shots">
+      <h2 class="reveal" data-i18n="bs_h"></h2>
+      <div class="shot-item reveal">
+        <figure class="tilt" data-tilt="-1"><img data-img="sp_b_all" alt="" width="1600" height="841" loading="lazy"></figure>
+        <div class="shot-copy"><p class="num">01</p><h3 data-i18n="bs1_h"></h3><p data-i18n="bs1_p"></p></div>
+      </div>
+      <div class="shot-item rev reveal">
+        <figure class="tilt" data-tilt="1"><img data-img="sp_b_cross" alt="" width="1600" height="841" loading="lazy"></figure>
+        <div class="shot-copy"><p class="num">02</p><h3 data-i18n="bs2_h"></h3><p data-i18n="bs2_p"></p></div>
+      </div>
+    </section>
+    <section class="demo reveal">
+      <div class="demo-copy">
+        <h2 data-i18n="cb_dh"></h2>
+        <p data-i18n="cb_dp"></p>
+        <a class="btn" href="suite/index.html#s=4" data-i18n="cta_suite_view">Open the suite preview</a>
+      </div>
+      <figure class="tilt big" data-tilt="1"><img data-img="sp_b_axial" alt="" width="1600" height="841" loading="lazy"></figure>
+    </section>
+  </div>
+  <div class="tabpanel" id="p-manufacturing" data-tab="manufacturing" role="tabpanel" aria-labelledby="t-manufacturing" hidden>
     <!-- Kapitel Manufacturing -->
     <section class="chapter split reveal" id="mfg">
       <div class="chap-copy">
-        <p class="chap-k"><span data-i18n="mod_label">Module</span> 2</p>
+        <p class="chap-k"><span data-i18n="mod_label">Module</span> 5</p>
         <h2 data-i18n="ch2_h">Manufacturing</h2>
         <p class="lead" data-i18n="ch2_p"></p>
       </div>
@@ -322,35 +650,38 @@
       </div>
     </section>
 
-    <section class="demo reveal">
+    <section class="demo embed reveal">
       <div class="demo-copy">
         <h2 data-i18n="mg_h">Manufacturing app preview</h2>
         <p data-i18n="mg_p"></p>
-        <a class="btn" href="fertigung/index.html" data-i18n="mod2_cta">Open the app</a>
+        <a class="btn" href="suite/index.html#s=5&t=2" target="_blank" rel="noopener" data-i18n="embed_full">Full screen</a>
       </div>
-      <figure class="tilt big" data-tilt="1"><img data-img="mf_pin" alt="" width="1600" height="902" loading="lazy"></figure>
+      <div class="embed-frame"><iframe data-src="suite/index.html#s=5&t=2" title="Fronteer Hairpin Suite" data-i18n-title="ar_suite" loading="lazy" allow="fullscreen"></iframe><a class="btn embed-mobile" href="suite/index.html#s=5&t=2" target="_blank" rel="noopener" data-i18n="embed_open">Open the suite preview</a></div>
     </section>
-
-    <!-- 7 · Ausblick -->
-    <section class="outlook reveal" id="outlook">
-      <p class="eyebrow" data-i18n="o_tag"></p>
-      <h2 data-i18n="o_h"></h2>
-      <p class="lead" data-i18n="o_p"></p>
-      <div class="o-cards">
-        <article class="o-card">
-          <svg viewBox="0 0 160 90" aria-hidden="true"><path class="o-a" d="M30 84 V44 L52 12"/><path class="o-a" d="M70 84 V44 L48 12"/><path class="o-b" d="M100 84 V44 L122 12"/><path class="o-b" d="M140 84 V44 L118 12"/><path class="o-w" d="M122 12 l-4 0"/></svg>
-          <h3 data-i18n="o1_h"></h3><p data-i18n="o1_p"></p>
-        </article>
-        <article class="o-card">
-          <svg viewBox="0 0 160 90" aria-hidden="true"><ellipse class="o-a" cx="80" cy="48" rx="56" ry="26"/><ellipse class="o-b" cx="80" cy="48" rx="40" ry="18"/><path class="o-a" d="M24 48 v-20 M136 48 v-20"/><path class="o-b" d="M80 30 v-18"/></svg>
-          <h3 data-i18n="o2_h"></h3><p data-i18n="o2_p"></p>
-        </article>
-        <article class="o-card">
-          <svg viewBox="0 0 160 90" aria-hidden="true"><path class="o-a" d="M24 84 V10"/><path class="o-b" d="M62 84 V30 Q62 10 82 10 H100 Q120 10 120 30 V84"/><path class="o-a" d="M140 84 V34 L128 50"/></svg>
-          <h3 data-i18n="o3_h"></h3><p data-i18n="o3_p"></p>
-        </article>
+    <section class="mfg-method reveal" id="process-sequence">
+      <p class="eyebrow" data-i18n="mp_k">From wire to stator</p>
+      <h2 data-i18n="mp_h"></h2>
+      <p class="lead" data-i18n="mp_p"></p>
+    </section>
+    <section class="results mfg-results">
+      <div class="r-grid">
+        <article class="rc c4 reveal"><p class="rc-k" data-i18n="pr1_k"></p><p class="rc-big"><b data-count="20" data-dec="0">20</b><em data-i18n="pr1_u"></em><span class="rc-sep"></span><b data-count="3" data-dec="0">3</b><em data-i18n="pr1_u2"></em></p><p class="rc-note" data-i18n="pr1_n"></p></article>
+        <article class="rc c4 reveal"><p class="rc-k" data-i18n="pr2_k"></p><p class="rc-big"><b data-count="162" data-dec="0">162</b><em>s</em><span class="rc-sep"></span><b data-count="45" data-dec="0">45</b><em>s</em></p><p class="rc-note" data-i18n="pr2_n"></p></article>
+        <article class="rc c4 reveal"><p class="rc-k" data-i18n="pr3_k"></p><p class="rc-big"><b data-count="325.0" data-dec="1">325.0</b><em>mm</em></p><p class="rc-note" data-i18n="pr3_n"></p></article>
       </div>
     </section>
+    <section class="shots">
+      <h2 class="reveal" data-i18n="ps_h"></h2>
+      <div class="shot-item reveal">
+        <figure class="tilt" data-tilt="-1"><img data-img="sp_m_seq" alt="" width="1600" height="841" loading="lazy"></figure>
+        <div class="shot-copy"><p class="num">01</p><h3 data-i18n="ps1_h"></h3><p data-i18n="ps1_p"></p></div>
+      </div>
+      <div class="shot-item rev reveal">
+        <figure class="tilt" data-tilt="1"><img data-img="sp_m_stator" alt="" width="1600" height="841" loading="lazy"></figure>
+        <div class="shot-copy"><p class="num">02</p><h3 data-i18n="ps2_h"></h3><p data-i18n="ps2_p"></p></div>
+      </div>
+    </section>
+  </div>
   </main>
 
   <footer>
