@@ -1,14 +1,23 @@
 # Fronteer Hairpin – showcase
 
-Fronteer Hairpin is a software suite for hairpin stators: winding scheme, end-winding optimization of the forming side, twist side with special legs, busbar and manufacturing up to the finished stator. Its status is a feasibility study. The chain is consistent in computation, but tooling, cooling and housing assumptions are unconfirmed and nothing has been tested experimentally. This repository is a showcase. It contains the technical report, the content of the project website and a static preview of the suite. **It contains no source code of the applications.**
+Fronteer Hairpin is a software suite for hairpin stators: winding scheme, end-winding optimization of the forming side, twist side with special legs, busbar and manufacturing up to the finished stator. Its status is a feasibility study. The chain is consistent in computation, but tooling, cooling and housing assumptions are unconfirmed and nothing has been tested experimentally. This repository is a showcase. It contains the technical report, the content of the project website and a preview of the suite (real interface, saved results, no computation). **It contains no source code of the applications.**
 
 Website: https://fronteerlab.com · Contact: contact@fronteerlab.com
 
 Technical report: https://doi.org/10.5281/zenodo.23965250 (Zenodo, DOI 10.5281/zenodo.23965250 always resolves to the latest version)
 
 <p align="center">
-  <img src="media/module-1-generation.png" width="49%" alt="Module 1, hairpin generation: Bayesian optimization finds the shortest end-winding shape that meets every requirement.">
-  <img src="media/module-2-manufacturing.png" width="49%" alt="Module 2, manufacturing: a forming program is fitted to the optimized 3D centreline, with springback compensated.">
+  <img src="media/suite-overview.png" width="100%" alt="The Fronteer Hairpin suite: process chain from winding scheme to finished stator, with the finished stator in the suite preview.">
+</p>
+
+<p align="center">
+  <img src="media/module-1-winding-scheme.png" width="32%" alt="Module 1, winding scheme: stator, conductor order and connections, checked and handed to all other modules.">
+  <img src="media/module-2-generation.png" width="32%" alt="Module 2, hairpin generation: the shortest end-winding shape that meets every requirement.">
+  <img src="media/module-3-twist-side.png" width="32%" alt="Module 3, twist side and special legs: twist geometry per layer, every special leg collision-free.">
+</p>
+<p align="center">
+  <img src="media/module-4-busbar.png" width="32%" alt="Module 4, busbar: jumpers, neutral bar and phase leads on their own levels, checked for clearance, current and heating.">
+  <img src="media/module-5-manufacturing.png" width="32%" alt="Module 5, manufacturing: bending program with springback compensation and the full sequence up to the finished stator.">
 </p>
 
 ## Contents
@@ -18,7 +27,7 @@ Technical report: https://doi.org/10.5281/zenodo.23965250 (Zenodo, DOI 10.5281/z
 | `report/` | Technical report (PDF, 4 pages, not peer reviewed; also published at Zenodo, DOI 10.5281/zenodo.23965250): constraint-driven generation and forming-program derivation for hairpin end windings. |
 | `site/` | The project website, with one tab per module and the suite first (screenshots in `site/img/`): static HTML, CSS and presentation scripts (story animations, language switch), result data shown on the site, and pre-rendered videos of the hero pin and of the manufacturing animation. |
 | `site/suite/` | Suite preview: a read-only build of the real interface (minified, without source maps) running on recorded results of the reference project. No server, no optimizer, no CAD, no computation kernel; shape parameters are anonymized and the bend-rule factor is removed. The bending program is shown as recorded states. `site/demo/` and `site/fertigung/` only redirect there. |
-| `media/` | The two module images shown above. |
+| `media/` | The suite overview and the five module images shown above. |
 
 ## About the app previews
 
